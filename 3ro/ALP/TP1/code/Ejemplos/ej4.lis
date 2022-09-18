@@ -1,0 +1,7 @@
+fac = 4; // factorial
+res = 1;
+while (fac > 0) {
+    res = res * fac;
+    fac = fac - 1
+}
+
