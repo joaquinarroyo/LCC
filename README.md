@@ -1,4 +1,4 @@
-# Lcc
+# Licenciatura en Ciencias de la Computación
 Materias de la carrera Licenciatura en Ciencias de la Computación (FCEIA)
 - Sistemas Operativos I (2021)
 - Estructuras de Datos y Algoritmos II (2022)
