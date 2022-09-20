@@ -1,0 +1,8 @@
+El codigo de salida de un programa se puede obtener a traves de gdb a traves del comando 'disass'
+y a traves comando por consola objdump con la bandera -d y el sufijo '| less' y luego buscar las funciones
+con /<nombredefuncion>.
+
+Por ejemplo:
+Sea prog un programa con una funcion main compilado, introducimos en consola
+$ objdump -d prog | less
+/<main>
