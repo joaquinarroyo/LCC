@@ -1,0 +1,119 @@
+autovalores: (x)
+ |A-xI| = 0; (ecuacion caracteristica)
+ cantidad de autovalores igual a dimension de A.
+
+autovectores: (vectores base del autoconjunto) (h conjunto) (x autovalor)
+ h(x) = (A-xI = 0); (0 vector nulo) 
+
+diagonalizar: 
+ A es diagonalizable si para cada xi, mi dim(H(xi)) = mi
+ AP = PD 
+ donde P esta formado por los autovectores
+ y D es diagonal donde los elementos de la diagonal son los autovalores
+
+producto interno:
+ [u, u] = (u^t).u (basicamente, producto vectorial) (u vector columna) 
+
+ ||u||^2 =  [u, u]
+
+descomposicion espectral:
+ sean u1, ... , uN autovalores y x1, ..., xN autovectores relacionados con los autovalores
+ luego A = u1.(x1).(x1)^t + ... + uN.(xN).(xN)^t
+
+matriz hermitiana: (A) A pertenece a K tq K = R o C.
+ A^H = (conj(A))^T (conjugado de A transpuesta)
+
+matriz unitaria: (A) A cuadrada con coeficientes complejos
+ A es unitaria si sus columnas son ortonormales.
+ (ortogonales y norma igual a 1, segun R^n)
+ A es unitaria si A.(conj(A))^t = Id. (conjugado de a transpuesta)
+
+matriz semejante: (A) (B)
+ decimos que B es semejante a A si existe una matriz M tq
+ B = M^(-1).A.M (tomando A, M es la matriz formada por sus autovectores)
+
+matriz normal/ortogonal:  (A)
+ A.A^t = A^t.A = I
+ usando: A = |cos(x) -sen(x)|
+	     |sen(x)  cos(x)|
+ le damos valores a x y conseguimos matrices normales.
+ A es normal si A. A^h = A^h. A
+
+triangular matrices con matriz unitaria U: (A)
+ A nxn, existe matriz T triangular tq T = U^-1. A. U.
+ las columnas de U van a conseguirse de la sgte manera:
+	consiguiendo los autovectores de A
+	aplicando metodo gram schmidt
+	poniendo los vectores conseguidos como columnas de U
+
+metodo: ej. A tiene 3 autovectores.
+ columna 1 de U = autovector1/norma(autovector1)
+ columna 2 de U = autovector2-(autovector2.columna1).columna1/norma(columna2)
+ columna 3 de U = (autovector3-(autovector3.columna1).columna1-
+ (autovector3.columna2).columna2)/norma(columna2)
+ (
+
+luego U = base ortonormal = [columna1, columna2, columna3]
+
+matriz inversa: (A)
+ A^-1 = 1/det(A) . (adj(A))^t
+
+elevar matrices a exponente n: (A)
+ si A es diagonalizable tenemos las matrices D y P, formadas por los autovalores 
+ y los autovectores respectivamente.
+ Luego sabemos que A = P. D. P^-1
+ Teniendo A^n tenemos la formula:
+ A^n = P. D^n . P^-1
+ Donde elevar a D a la n es facil ya que al ser diagonal solo debemos elevar a la n
+ a los elementos de la diagonal.
+
+ej Autovalores y autovectores.
+
+|3  0|	 |x 0|
+|8 -1| - |0 x| = 0
+
+|3-x  0|
+|8 -1-x| = 0
+
+(3-x).(-1-x) - 0 = 0
+-3-3x+x+x^2 = 0
+x^2-2x-3 = 0
+
+x1 = -1 x2 = 3
+
+|4  0|   |0|
+|8  0| = |0|
+
+4x-0y = 0
+8x-0y = 0
+
+x = 0 |0| = A|0|
+y = A |A|    |1|
+
+H(x1) = |0|
+	|1|
+
+|0  0|	 |0|
+|8 -4| = |0|
+
+8x-4y = 0 -> 8x = 4y -> 2x = y
+
+|x | = x.|1|
+|2x|  	 |2|
+
+H(x2) = |1|
+	|2|
+
+ej 7-
+
+|-1 -1|   |0|
+| 2  2| = |0|
+
+-x-y = 0  -> x = -y	
+2x+2y = 0 -> -2y + 2y = 0 -> 0 = 0
+
+|-y|     |1|
+| y| = y.|1|
+
+H(2) = |1|
+       |1|
