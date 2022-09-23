@@ -1,0 +1,97 @@
+INFORME TRABAJO PRACTICO 1
+
+CAINELLI IGNACIO, ARROYO JOAQUIN
+
+---------------
+
+Eleccion de estructuras elegida -> Lista Doblemente Enlazada (Sin marcar el primer y ultimo nodo)
+
+Elegimos dicha implementacion por la comodidad que ofrece a la hora de ir iterarando y desplazandose nodo a nodo.
+Podemos recorrer la lista hacia adelante y hacia atras gracias a que cada nodo guarda el anterior y el siguiente a el,
+tambien ofrece comodidad a la hora de intercambiar nodos o quitar un nodo e insertarlo en otro posicion, ya que podemos acceder
+facilmente a su nodo anterior y siguiente, para modificar donde apuntan estos.
+
+En esta implementacion no agregamos lo de guardar el primer y ultimo nodo ya que no nos parecia relevante a la hora de operar con las listas
+Ya que nos guiamos con que el primer nodo es aquel en el cual su nodo anterior es NULL y el ultimo nodo es aquel el cual su siguiente es NULL.
+
+---------------
+
+Como se compila y se usa el programa:
+
+	La compilacion viene dada el archivo makefile correspondiente.
+
+	Utilizar $ make generador para compilar el primer programa
+
+	Utilizar $ make ordenador para compilar el segundo programa
+	
+	A la hora de usar el programa, vamos a contar con dos programas tal como pide la consigna, dichos archivos son generador
+	y ordenador.
+	
+	A la hora de ejectuar generador, se le debe pasar 4 argumentos, el nombre del archivo que incluye a los nombres, el nombre del archivo
+	que incluye a los paises, un entero indicando la cantidad de datos a obtener, y el nombre del archivo de salida.
+	
+	Ejemplo de ejecucion de generador: ./generador nombres.txt paises.txt 10000 salidaGenerada.txt
+
+	A la hora de ejecutar ordenador, se le debe pasar 8 argumentos, el nombre del archivo de entrada que contiene los datos, 6 nombres de archivos
+	de salida, y los ultimos dos argumentos seran los atributos a comparar
+
+	En que orden se generan los archivos:
+
+	El orden de los algorimos sera Selection, Insertion, Merge.
+	El orden de las comparaciones sera Nombre, Edad, Lugar (solo se usan dos de estas).
+
+	Ejemplo de ejecucion de ordenador: ./ordenador salidaGenerada.txt selectionNombre.txt insertionNombre.txt mergeNombre.txt
+ selectionEdad.txt insertionEdad.txt mergeEdad.txt nombre edad
+
+--------------
+
+Caracteres Especiales:
+
+Ante la aparacion de caracteres especiales, decidimos importar las librerias locale.h y wchar.h que nos permitian trabajar con caracteres
+del idioma español para imprimir en archivos. Decidimos implementar arrays de wchar_t (caracteres amplios) en los atributos nombre y lugar
+en la estructura Persona. Asi mismo decidimos utilizar funciones de la libreria wchar.h para operar con dichos arrays.
+
+A la hora de comparar los strings de los arrays para ordenar, decidimos que ir comparando caracter a caracter, la letra ñ se encontraria
+entre la letra n y o, escribiendo en codigo los casos correspodientes a cada comparacion. Por lo cual quedaran ordenados los nombres
+de acuerdo al abecedario español.
+
+Luego no encontramos ningun problema mas y pudimos comparar e imprimir los caracteres especiales de manera correcta.
+
+--------------
+
+Comparacion de resultados:
+
+	A la hora de obtener los resultados, se nos presentaron dos casos claros 
+	en cuanto a cantidad de tiempo en el se tardo en realizar el orden
+	
+	1. Los algoritmos de selection sort y insertion sort tardan aproximadamente lo mismo en ejecutarse, aunque el
+	algoritmo de selection sort resulta mas rapido que el de insertion cuando la cantidad de datos es mayor.
+
+	2. El algoritmo de merge sort es mucho mas rapido que los dos anteriores. Llegando a ser mucho mas
+	cuando la cantida de datos es mayor.
+
+	Comparacion de tiempos (Atributo de nombre y 750 personas):
+		Selection -> 0,159558 segundos
+		Insertion -> 0,150716 segundos
+		Merge     -> 0,002178 segundos
+
+	Comparacion de tiempos (Atributo de edad y 750 personas):
+		Selection -> 0,002521 segundos
+		Insertion -> 0,002089 segundos
+		Merge 	  -> 0,000121 segundos
+
+
+	Comparacion de tiempos (Atributo de nombre y 20000 personas):
+		Selection -> 26,857634 segundos
+		Insertion -> 41,427865 segundos
+		Merge     -> 0,103263 segundos
+
+	Comparacion de tiempos (Atributo de edad y 20000 personas):
+		Selection -> 14,211114 segundos
+		Insertion -> 16,272695 segundos
+		Merge     -> 0,013025 segundos
+
+
+Bibliografia Utilizada:
+
+	Implementacion de wchar_t -> https://en.wikibooks.org/wiki/C_Programming/wchar.h
