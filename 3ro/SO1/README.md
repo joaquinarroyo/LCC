@@ -6,6 +6,5 @@ Contenido:
 - Erlang
   - Practicas
   - Pruebas
-- TP1
-- TP2
+- TPs: 1 y 2
 - Entregas semanales
