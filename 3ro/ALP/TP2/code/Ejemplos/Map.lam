@@ -1,0 +1,20 @@
+-- Ejemplos de listas
+def ls1 = cons 0 (cons 1 (cons 2 (cons 3 (cons 4 (cons 5 nil)))))
+def ls2 = cons 0 (cons 1 (cons 2 (cons 3 (cons 4 (cons 5 (cons 6 nil))))))
+def ls3 = cons 0 (cons 0 (cons 0 (cons 0 (cons 0 (cons 0 nil)))))
+
+-- repeat: repite una funcion (fun) sobre un termino (t) una cantidad (n) de veces
+def repeat = \ f x n. n f x
+
+-- len: Longitud de una lista
+def len = \ xs . xs (\ x r. suc r) zero
+
+-- append: agrega un elemento al final de la lista
+def app = \xs y. xs (\ x r. cons x r) (cons y nil) 
+
+-- Ejercicio 6
+-- Funcion auxiliar para mapN
+def mapnAux = \ f p. (pair (app (fst p) (repeat f (head (snd p)) (len (fst p)))) (tail (snd p))) 
+
+-- Definicion de mapN
+def mapn = \ f xs. fst ((len xs) (mapnAux f) (pair nil xs))

@@ -1,0 +1,49 @@
+name:                TP2
+version:             0.1.0.0
+github:              "githubuser/TP2"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2020 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/TP2#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- pretty
+- parsec
+- haskeline >= 0.8.0.0
+- mtl
+- exceptions
+- ansi-wl-pprint
+
+default-extensions:
+- TupleSections
+- MultiWayIf
+- LambdaCase
+
+library:
+  source-dirs: 
+  - src 
+
+executables:
+  TP2-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - TP2

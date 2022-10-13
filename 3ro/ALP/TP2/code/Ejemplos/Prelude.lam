@@ -1,0 +1,62 @@
+-- identidad
+def id = \x . x 
+
+-- Booleanos
+def true = \ t f . t
+def false = \t f . f
+
+def and = \a b. a b false
+def or  = \a b. a true b
+
+-- Pares
+def pair = \x y p . p x y
+
+def fst = \p . p true
+def snd = \p . p false
+
+-- Numerales de Church
+def zero = \s z . z
+def suc = \n s z . s (n s z)
+
+def is0 = \n . n (\ x . false) true
+
+def add = \n m s z . n s (m s z)
+def mult = \n m s z . n (m s) z
+def pow = \n m. m (mult n) 1
+
+def pred = \ n . fst (n (\p . pair (snd p) (suc (snd p))) (pair zero zero))
+def minus = \n m. m pred n
+
+--Listas
+def nil = \c n . n
+def cons = \x xs c n . c x (xs c n)
+
+def isnil = \xs . xs (\x ys . false) true
+
+-- Funciones sobre listas
+def tail = \xs . fst (xs (\x r . pair (snd r) (cons x (snd r))) 
+                          (pair nil nil)) 
+
+def head = \xs . xs (\x y . x) bottom
+
+def lenght = \xs. xs (\x r. suc r) 0
+
+-- Combinador de Punto Fijo
+def Y = \f . (\x . f (x x)) (\x . f (x x))
+
+-- factorial
+def fact = Y (\f n. (is0 n) (suc zero) (mult n (f (pred n))))
+
+-- bottom
+def bottom = (\x . x x) (\x . x x)
+
+def geq = \n m. (is0 (minus n (pred m))) false true
+
+def filter = \p xs. xs (\x r. (p x) (cons x r) r) nil
+
+def mayores = \n xs. minus (lenght xs) (lenght (filter (geq (pred n)) xs)) -- esta esta bien
+
+def mayores = \n xs. lenght (filter (geq n) xs) -- esta hice yo
+
+
+
