@@ -1,0 +1,51 @@
+------------------------------ Practica 3 ---------------------------------------
+def not = \x. x false true
+
+----- Ejercicio 11
+def prod = \n m. n (add m) 0
+
+-- n elevado a m
+def pow = \n m. m (prod n) 1
+
+----- Ejercicio 12
+def minus = \n m. m pred n
+
+----- Ejercicio 13
+def H = \p. (is0 (fst p)) (pair 1 (f (snd p))) (pair 0 (snd p))
+
+def fun = \n. \f x. snd (n H (pair zero (snd p)))
+
+----- Ejercicio 14
+-- foldBin Leaf l b = l
+-- foldBin (Bin a t u) l b = b a (foldBin t l b) (foldBin u l b)
+--
+-- foldBin Leaf = \ l b . l
+-- foldBin (Bin a t u) = \ l b . b a (foldBin t l b) (foldBin u l b)
+-- Si foldBin = \x . x
+-- Leaf = \l b . l
+-- 
+-- Bin a t u = \l b . b a (t l b) (u l b)
+-- Bin = \a t u . \l b. b a (t l b) (u l b)
+
+def max = \x y. (is0 (minus x y)) y x
+
+def foldBin = \x . x
+def Leaf = \l b . l
+def Bin = \a t u . \l b. b a (t l b) (u l b)
+
+def isLeaf = \t. t true (\x y z. false)
+
+def mapBin = \f t. t Leaf (\x y z. Bin (f x) y z)
+
+def heightBin = \t. t zero (\x y z. suc (max y z))
+
+def mirrorBin = \t. t Leaf (\x y z. Bin x z y)
+
+def t1 = Bin 4 (Bin 3 Leaf Leaf) Leaf
+def t1Suc = Bin 5 (Bin 4 Leaf Leaf) Leaf
+
+
+def t2 = Bin 4 Leaf (Bin 3 Leaf Leaf)
+
+
+
