@@ -1,0 +1,3 @@
+def I = \x:E. x
+def K = \x:E.\y:E.x
+def S = \x:E->E->E.\y:E->E.\z:E.(x z) (y z)
