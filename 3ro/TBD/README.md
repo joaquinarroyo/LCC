@@ -2,4 +2,4 @@
 Contenido:
 - Slides
 - Ejercicios
-- TPs: 1
+- TPs: 1 y 2
