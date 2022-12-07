@@ -10,6 +10,7 @@ Contenido de materias de la carrera Licenciatura en Ciencias de la Computación 
 - 3er Año
   - Sistemas Operativos I (2021)
   - Estructuras de Datos y Algoritmos II (2022) 
+  - Comunicaciones (2021)
   - Analisis de lenguajes de programación (2022)
   - Teoría de Bases de Datos (2022)
 - 4to Año
