@@ -1,0 +1,78 @@
+ ================================================================================
+// named.conf en ns1
+
+options {
+	directory "/var/cache/bind";
+	notify yes;
+}
+
+zone "basel.net" {
+	type master;
+	file "/db.basel";
+	allow-query { any; };
+	allow-transfer { 2a03:2880:f113:8083:face:b00c:0:25de; };
+}
+
+zone "2.0.0.1:67c:2294:8083.IP6.arpa" {
+	type slave;
+	masters { 2a03:2880:f113:8083:face:b00c:0:25de; };
+	allow-query { any; };
+	file "rev.basel";
+}
+
+ ================================================================================
+// named.conf en ns2
+
+options {
+	directory "/var/cache/bind";
+	notify yes;
+}
+
+zone "ba.basel.net" {
+	type slave;
+	masters {2001:67c:2294:1000:0:0:0:f199; };
+	allow-query { any; };
+	file "/db.basel";
+}
+
+zone "4.9.2.2.0.c.7.6.1.0.0.2.IP6.arpa" {
+	type master;
+	allow-query { any; };
+	allow-transfer { 2001:67c:2294:1000:0:0:0:f199; };
+	file "/rev.basel";
+}
+
+ ================================================================================
+// db.basel en ns1
+
+$ TTL 1D
+$ Origin basel.net.
+@ IN SOA ns1 hostmaster (2020111801; serial
+ 							5h; refresh
+ 							15m; update retry
+ 							3W12h; expiry
+ 							2h20m; TTL negativo)
+ 			IN NS ns1
+ 			IN NS ns2.ba
+ 			IN MX 10 mx.ros
+
+ns1 			IN 	AAAA 		2001:67c:2294:1000:0:0:0:f199
+ns2.ba			IN	AAAA 		2a03:2880:f113:8083:face:b00c:0:25de
+mx.ros			IN 	AAAA 		2001:67c:2294:1000:0:0:fe:f199
+
+
+ ================================================================================
+// rev.basel en ns1
+
+$ TTL 1D
+$ Origin 4.9.2.2.0.c.7.6.1.0.0.2.IP6.ARPA.
+@ IN SOA ns2.ba.basel.net. hostmaster.ba.basel.net. (2020111802; serial
+ 							5h; refresh
+ 							15m; update retry
+ 							3W12h; expiry
+ 							2h20m; TTL negativo)
+ 			IN NS ns2.ba.basel.net.
+ 			IN NS ns1.basel.net.
+
+9.9.1.f.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1 IN PTR 	www.basel.net.
+9.9.1.f.e.f.0.0.0.0.0.0.0.0.0.0.0.0.0.1 IN PTR 	mx.ros.basel.net.

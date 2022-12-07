@@ -1,0 +1,103 @@
+// named.conf en ns1
+
+zone "lcc.ar" {
+	type master;
+	file "/etc/bind/db.lcc";
+}
+
+zone "235.168.192.in-addr.arpa" {
+	type master;
+	file "/etc/bind/rev.lcc";
+}
+
+zone "comunic.lcc.ar" {
+	type slave;
+	master {"192.168.235.160"; };
+	file "/etc/bind/db.comunic.lcc";
+}
+
+zone "128/25.235.168.192.in-addr.arpa" {
+	type slave;
+	master {"192.168.235.160"; };
+	file "/etc/bind/rev.comunic.lcc";
+}
+
+zone "acme.ar" {
+	type slave;
+	master {"192.168.254.237"; }
+	file "/etc/bind/db.acme";
+}
+
+// named.conf en ns.comunic
+
+zone "comunic.lcc.ar" {
+	type master;
+	file "/etc/bind/db.comunic.lcc";
+}
+
+zone "128/25.235.168.192.in-addr.arpa" {
+	type master;
+	file "/etc/bind/rev.comunic.lcc";
+}
+
+// db.lcc en ns1
+
+@ TTL 1D
+@ Origin lcc.ar.
+IN SOA ns1 hostmaster (2020112501; 5h; 15m; 3W12h; 2h20m;)
+	IN NS ns1
+	IN NS ns2
+	IN MX 10 mx
+
+ns1 		IN A 	192.168.235.1
+ns2 		IN A 	192.168.235.2
+mx 		IN A 	192.168.235.3
+
+comunic 	IN NS 	ns2
+		IN NS 	ns.comunic
+
+ns.comunic 	IN A	192.168.235.160
+
+
+// db.comunic.lcc en ns
+
+@ TTL 1D
+@ Origin comunic.lcc.ar.
+IN SOA ns hostmaster (2020112502; 5h; 15m; 3W12h; 2h20m;)
+	IN NS ns
+	IN NS ns1.lcc.ar.
+	IN MX 10 mx
+
+ns 		IN A 	192.168.235.160
+mx		IN A	192.168.235.161
+
+// rev.lcc en ns1
+
+@ TTL 1D
+@ Origin 235.168.192.in-addr.arpa.
+IN SOA ns1.lcc.ar hostmaster.lcc.ar (2020112503; 5h; 15m; 3W12h; 2h20m;)
+		IN NS ns1.lcc.ar.
+		IN NS ns2.lcc.ar.
+		IN NS ns.fceia.ar.
+
+1		IN PTR 		ns1.lcc.ar.
+2		IN PTR 		ns2.lcc.ar.
+3		IN PTR 		mx.lcc.ar.
+
+128/25		IN NS		ns.comunic.lcc.ar.
+		IN NS 		ns1.lcc.ar.
+
+160 		IN CNAME  	160.0/25.235.168.192.in-addr-arpa
+
+
+// rev.comunic.lcc en ns
+@ TTL 1D
+@ Origin 235.168.192.in-addr.arpa.
+IN SOA ns.comunic.lcc.ar hostmaster.comunic.lcc.ar (2020112503; 5h; 15m; 
+							3W12h; 2h20m;)
+		IN NS ns.comunic.lcc.ar.
+		IN NS ns1.lcc.ar.
+
+160		IN PTR		ns.comunic.lcc.ar.
+161		IN PTR		mx.comunic.lcc.ar.
+
