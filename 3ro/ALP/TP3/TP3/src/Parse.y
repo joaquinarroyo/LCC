@@ -41,11 +41,11 @@ import Data.Char
 %right VAR
 %left '=' 
 %right '->'
+%right '\\' '.' LET IN
 %left AS
 %right FST SND
-%right SUC
 %right R
-%right '\\' '.' LET IN
+%right SUC
 
 %%
 
@@ -68,7 +68,7 @@ NAbs    :: { LamTerm }
 Atom    :: { LamTerm }
         : VAR                          { LVar $1 }
         | Unit                         { $1 }
-        | Pair                         { $1 }
+        | PairAtom                     { $1 }
         | ZERO                         { LZero }
         | '(' Exp ')'                  { $2 }
 
@@ -82,25 +82,22 @@ Type    : TYPEE                        { EmptyT }
 Defs    : Defexp Defs                  { $1 : $2 }
         |                              { [] }
 
--- Ej 02
 Let     :  LET VAR '=' Exp IN Exp     { LLet $2 $4 $6 }
 
--- Ej 03
 As      : Exp AS Type                 { LAs $1 $3 }
 
--- Ej 05
 UnitT   : UNITT                       { UnitT }
 
 Unit    : UNIT                        { LUnit }
 
--- Ej 06
 Pair    : '(' Exp ',' Exp ')'         { LPair $2 $4 }
         | FST Exp                     { LFst $2 }
         | SND Exp                     { LSnd $2 }
 
+PairAtom : '(' Atom ',' Atom ')'      { LPair $2 $4 }
+
 PairT   : '(' Type ',' Type ')'       { PairT $2 $4 }
 
--- Ej 09
 Suc     : R Atom Atom Exp             { LRec $2 $3 $4 }
         | SUC Exp                     { LSuc $2 }
         
@@ -177,24 +174,19 @@ lexer cont s = case s of
                     (')':cs) -> cont TClose cs
                     (':':cs) -> cont TColon cs
                     ('=':cs) -> cont TEquals cs
-                    -- ej 09
                     ('0':cs) -> cont TZero cs
                     unknown -> \line -> Failed $ 
                      "Línea "++(show line)++": No se puede reconocer "++(show $ take 10 unknown)++ "..."
                     where lexVar cs = case span isAlpha cs of
                               ("E",rest)     -> cont TTypeE rest
                               ("def",rest)   -> cont TDef rest
-                              -- Ej 02
                               ("let", rest)  -> cont TLet rest
                               ("in", rest)   -> cont TIn rest
-                              -- Ej 03
                               ("as", rest)   -> cont TAs rest
-                              -- Ej 06
                               ("unit", rest) -> cont TUnit rest
                               ("Unit", rest) -> cont TUnitT rest
                               ("fst", rest)  -> cont TFst rest
                               ("snd", rest)  -> cont TSnd rest
-                              -- Ej 09
                               ("suc", rest)  -> cont TSuc rest
                               ("R", rest)    -> cont TRec rest
                               ("Nat", rest)  -> cont TNat rest
