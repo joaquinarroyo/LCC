@@ -1,3 +1,6 @@
+-- Este parcial es realizado en papel.
+-- A continuacion estan las funciones pedidas del ej 1
+
 
 data Tree a = E | L a |N a (Tree a) (Tree a) deriving Show
 
