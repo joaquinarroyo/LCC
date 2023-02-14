@@ -8,6 +8,7 @@ Contenido de materias de la carrera Licenciatura en Ciencias de la Computación 
   - Complementos de Matemática I (2020)
   - Arquitectura del computador (2020)
 - 3er Año
+  - Probabilidad y Estadistica (2021)
   - Sistemas Operativos I (2021)
   - Estructuras de Datos y Algoritmos II (2022) 
   - Comunicaciones (2021)
