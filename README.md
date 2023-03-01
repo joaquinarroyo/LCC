@@ -16,3 +16,5 @@ Contenido de materias de la carrera Licenciatura en Ciencias de la Computación 
   - Teoría de Bases de Datos (2022)
 - 4to Año
   - Sistemas Operativos II (2022)
+  - Introducción a la Inteligencia Artificial (2023) 
+  - Ingenieria del Software (2023)
