@@ -1,0 +1,83 @@
+name:                TP-FINAL
+version:             0.1.0.0
+github:              "joaquinarroyo/TP-FINAL"
+license:             BSD3
+author:              "Joaquin Arroyo"
+maintainer:          "joaquin.arroyo100@gmail.com"
+copyright:           "2022 Joaquin Arroyo"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            
+# category:            
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: TP Final ALP 2023
+
+dependencies:
+- aeson
+- ansi-wl-pprint
+- array
+- base >= 4.7 && < 5
+- bytestring
+- cassava
+- containers
+- directory
+- exceptions
+- haskeline >= 0.8.0.0
+- HPDF >= 1.4.0
+- mtl
+- parsec
+- pretty
+- QuickCheck
+- strict
+- text
+- time
+- time-parsers
+
+default-extensions:
+- GADTs
+- StandaloneDeriving
+- FlexibleInstances
+- DeriveGeneric
+
+ghc-options:
+- -Wunused-imports
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  TP-FINAL-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - TP-FINAL
+
+tests:
+  TP-FINAL-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - TP-FINAL

@@ -1,0 +1,147 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           TP-FINAL
+version:        0.1.0.0
+description:    TP Final ALP 2023
+homepage:       https://github.com/joaquinarroyo/TP-FINAL#readme
+bug-reports:    https://github.com/joaquinarroyo/TP-FINAL/issues
+author:         Joaquin Arroyo
+maintainer:     joaquin.arroyo100@gmail.com
+copyright:      2022 Joaquin Arroyo
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/joaquinarroyo/TP-FINAL
+
+library
+  exposed-modules:
+      Command.AST
+      Command.Eval
+      Export.CSV
+      Export.Exporter
+      Export.PDF
+      Extra.Error
+      Extra.Lib
+      Extra.Pp
+      Filter.AST
+      Filter.Eval
+      Filter.Lib
+      Monad.Env
+      Monad.State
+      Parser.Parser
+      Profile.Profile
+      Structures.Folder
+      Structures.Route
+      Structures.Task
+  other-modules:
+      Paths_TP_FINAL
+  hs-source-dirs:
+      src
+  default-extensions:
+      GADTs
+      StandaloneDeriving
+      FlexibleInstances
+      DeriveGeneric
+  ghc-options: -Wunused-imports -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      HPDF >=1.4.0
+    , QuickCheck
+    , aeson
+    , ansi-wl-pprint
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , directory
+    , exceptions
+    , haskeline >=0.8.0.0
+    , mtl
+    , parsec
+    , pretty
+    , strict
+    , text
+    , time
+    , time-parsers
+  default-language: Haskell2010
+
+executable TP-FINAL-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_TP_FINAL
+  hs-source-dirs:
+      app
+  default-extensions:
+      GADTs
+      StandaloneDeriving
+      FlexibleInstances
+      DeriveGeneric
+  ghc-options: -Wunused-imports -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HPDF >=1.4.0
+    , QuickCheck
+    , TP-FINAL
+    , aeson
+    , ansi-wl-pprint
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , directory
+    , exceptions
+    , haskeline >=0.8.0.0
+    , mtl
+    , parsec
+    , pretty
+    , strict
+    , text
+    , time
+    , time-parsers
+  default-language: Haskell2010
+
+test-suite TP-FINAL-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_TP_FINAL
+  hs-source-dirs:
+      test
+  default-extensions:
+      GADTs
+      StandaloneDeriving
+      FlexibleInstances
+      DeriveGeneric
+  ghc-options: -Wunused-imports -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HPDF >=1.4.0
+    , QuickCheck
+    , TP-FINAL
+    , aeson
+    , ansi-wl-pprint
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , directory
+    , exceptions
+    , haskeline >=0.8.0.0
+    , mtl
+    , parsec
+    , pretty
+    , strict
+    , text
+    , time
+    , time-parsers
+  default-language: Haskell2010
