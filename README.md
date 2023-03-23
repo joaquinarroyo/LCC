@@ -3,6 +3,7 @@ Contenido de materias de la carrera Licenciatura en Ciencias de la Computación 
 - 2do Año
   - Algebra Lineal (2020)
   - Estructuras de Datos y Algoritmos I (2020) 
+  - Métodos Numéricos (2020) (Incompleta)
   - Lenguajes Formales y Computabilidad (2021)
   - Lógica (2020)
   - Complementos de Matemática I (2020)
