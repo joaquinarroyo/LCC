@@ -12,3 +12,6 @@ class Problem:
 
     def heuristic(self, state):
         return 0
+    
+    def cost(self, state, succ):
+        return 1

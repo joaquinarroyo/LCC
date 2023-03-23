@@ -68,14 +68,14 @@ def dfs_with_limit(problem, limit):
 def a_star(problem):
     l = [(problem.initial, [], [], 0)]
     while l:
-        node, ancestors, actions, depth = l.pop()
+        node, ancestors, actions, cost = l.pop()
         if problem.goal_test(node):
             return node, actions
         for succ, action, _ in problem.actions(node):
             # Chequeamos los ancestros
             if succ not in ancestors:
                 newAncestors = ancestors + [node]
-                l += [(succ, newAncestors, actions + [action], depth + 1)]
+                l += [(succ, newAncestors, actions + [action], cost + problem.cost(node, succ))]
         # Ordenamos segun la heuristica y costo
         l.sort(key=lambda x: problem.heuristic(x[0]) + x[3], reverse=True)
 
@@ -106,11 +106,11 @@ class EightPuzzle(Problem):
             newStates += [(newState, action, 1)]
         return newStates
 
-    def heuristic(self, state):
-        return self.manhattan_distance(state)
-
     def goal_test(self, state):
         return state == self.goal
+
+    def heuristic(self, state):
+        return self.manhattan_distance(state)
 
     def search_zero(self, state):
         for i in range(0, 3):

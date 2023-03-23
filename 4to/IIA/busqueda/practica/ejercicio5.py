@@ -64,6 +64,9 @@ class searchCity(Problem):
     def goal_test(self, state):
         return state == self.goal
 
+    def cost(self, state, succ):
+        return cities[state][succ]
+
     def heuristic(self, state):
         match self.h:
             case 0:
