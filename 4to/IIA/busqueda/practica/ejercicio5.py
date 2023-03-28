@@ -1,5 +1,4 @@
 from Problem import Problem
-from ejercicio4 import bfs, dfs, dfs_with_ancestors, dfs_with_limit, a_star
 
 # ejercicio 5 #
 
@@ -67,52 +66,46 @@ class searchCity(Problem):
     def cost(self, state, succ):
         return cities[state][succ]
 
-    def heuristic(self, state):
+    def heuristic(self, x):
         match self.h:
             case 0:
-                return self.a(state)
+                # Heuristica a, costo
+                return x[3]
             case 1:
-                return self.b(state)
+                # Heuristica b, distancia a bucharest
+                return self.distance_heuristic(x[0])
             case 2:
-                return self.c(state)
+                # Heuristica c, distancia a bucharest + costo
+                return self.distance_heuristic(x[0]) + x[3]
 
+    def distance_heuristic(self, succ):
+        return distance_to_bucharest[succ]
 
-    # Heuristica a (solo costo)
-    def a(self, state):
-        cities_ = cities[state]
-        return min(cities_.values())
-
-    # Heuristica b (distancia a bucharest)
-    def b(self, state):
-        return distance_to_bucharest[state]
-
-    # Heuristica c (distancia a bucharest + costo)
-    def c(self, state):
-        return self.b(state) + self.a(state)
 
 
 # A estrella
 def a_star(problem):
-    l = [(problem.initial, [], [])]
+    l = [(problem.initial, [], [], 0)]
     while l:
-        node, ancestors, actions = l.pop()
+        node, ancestors, actions, cost = l.pop()
         if problem.goal_test(node):
-            return node, actions
+            return node, actions, cost
+
         for succ, action, _ in problem.actions(node):
             # Chequeamos los ancestros
             if succ not in ancestors:
                 newAncestors = ancestors + [node]
-                l += [(succ, newAncestors, actions + [action])]
-        # Ordenamos segun la heuristica y costo
-        l.sort(key=lambda x: problem.heuristic(x[0]), reverse=True)
+                l += [(succ, newAncestors, actions + [action], cost + problem.cost(node, succ))]
+        
+        l.sort(key=problem.heuristic, reverse=True)
 
 
 problem = searchCity("Arad", "Bucharest", 0)
-_, actions = a_star(problem)
-print("Heuristica a: " + str(actions))
+_, actions, cost = a_star(problem)
+print("Heuristica a: " + str(actions), "Costo: " + str(cost))
 problem = searchCity("Arad", "Bucharest", 1)
-_, actions = a_star(problem)
-print("Heuristica b: " + str(actions))
+_, actions, cost = a_star(problem)
+print("Heuristica b: " + str(actions), "Costo: " + str(cost))
 problem = searchCity("Arad", "Bucharest", 2)
-_, actions = a_star(problem)
-print("Heuristica c: " + str(actions))
+_, actions, cost = a_star(problem)
+print("Heuristica c: " + str(actions), "Costo: " + str(cost))

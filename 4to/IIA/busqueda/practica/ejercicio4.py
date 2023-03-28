@@ -6,12 +6,13 @@ from Problem import Problem
 # busqueda en ancho
 def bfs(problem):
     l = [(problem.initial, [])]
-
+    open_nodes = []
     while l:
         node, actions = l.pop(0)
+        open_nodes += [node]
 
         if problem.goal_test(node):
-            return node, actions
+            return node, actions, open_nodes
 
         for succ, action, _ in problem.actions(node):
             l += [(succ, actions + [action])]
@@ -20,9 +21,9 @@ def bfs(problem):
 # busqueda en profundidad
 def dfs(problem):
     l = [(problem.initial, [])]
-
     while l:
         node, actions = l.pop()
+        open_nodes += [node]
 
         if problem.goal_test(node):
             return node, actions
@@ -67,10 +68,12 @@ def dfs_with_limit(problem, limit):
 # A estrella
 def a_star(problem):
     l = [(problem.initial, [], [], 0)]
+    open_nodes = []
     while l:
-        node, ancestors, actions, cost = l.pop()
+        node, ancestors, actions, cost, = l.pop()
+        open_nodes += [node]
         if problem.goal_test(node):
-            return node, actions
+            return node, actions, open_nodes
         for succ, action, _ in problem.actions(node):
             # Chequeamos los ancestros
             if succ not in ancestors:
@@ -146,6 +149,7 @@ class EightPuzzle(Problem):
 
 if __name__ == "__main__":
     problem = EightPuzzle()
-    node, actions = bfs(problem)
+    node, actions, open_nodes = a_star(problem)
     print(node)
     print(actions)
+    print(len(open_nodes))
