@@ -57,55 +57,52 @@ class searchCity(Problem):
     def actions(self, state):
         actions = []
         for city in cities[state]:
-            actions += [(city, "ir a " + city, 1)]
+            actions += [(city, "ir a " + city, cities[state][city])]
         return actions
 
     def goal_test(self, state):
         return state == self.goal
 
-    def cost(self, state, succ):
-        return cities[state][succ]
-
     def heuristic(self, x):
         match self.h:
             case 0:
                 # Heuristica a, costo
-                return x[3]
+                return x[2]
             case 1:
                 # Heuristica b, distancia a bucharest
                 return self.distance_heuristic(x[0])
             case 2:
                 # Heuristica c, distancia a bucharest + costo
-                return self.distance_heuristic(x[0]) + x[3]
+                return self.distance_heuristic(x[0]) + x[2]
 
     def distance_heuristic(self, succ):
         return distance_to_bucharest[succ]
 
 
-
 # A estrella
 def a_star(problem):
-    l = [(problem.initial, [], [], 0)]
+    l = [(problem.initial, [], 0)]
+    closed = []
     while l:
-        node, ancestors, actions, cost = l.pop()
+        node, actions, cost = l.pop()
+        closed += [node]
         if problem.goal_test(node):
             return node, actions, cost
 
-        for succ, action, _ in problem.actions(node):
+        for succ, action, cost_ in problem.actions(node):
             # Chequeamos los ancestros
-            if succ not in ancestors:
-                newAncestors = ancestors + [node]
-                l += [(succ, newAncestors, actions + [action], cost + problem.cost(node, succ))]
+            if succ not in closed:
+                l += [(succ, actions + [action], cost + cost_)]
         
         l.sort(key=problem.heuristic, reverse=True)
 
-
-problem = searchCity("Arad", "Bucharest", 0)
-_, actions, cost = a_star(problem)
-print("Heuristica a: " + str(actions), "Costo: " + str(cost))
-problem = searchCity("Arad", "Bucharest", 1)
-_, actions, cost = a_star(problem)
-print("Heuristica b: " + str(actions), "Costo: " + str(cost))
-problem = searchCity("Arad", "Bucharest", 2)
-_, actions, cost = a_star(problem)
-print("Heuristica c: " + str(actions), "Costo: " + str(cost))
+if __name__ == "__main__":
+    problem = searchCity("Arad", "Bucharest", 0)
+    _, actions, cost = a_star(problem)
+    print("Heuristica a: " + str(actions), "Costo: " + str(cost))
+    problem = searchCity("Arad", "Bucharest", 1)
+    _, actions, cost = a_star(problem)
+    print("Heuristica b: " + str(actions), "Costo: " + str(cost))
+    problem = searchCity("Arad", "Bucharest", 2)
+    _, actions, cost = a_star(problem)
+    print("Heuristica c: " + str(actions), "Costo: " + str(cost))

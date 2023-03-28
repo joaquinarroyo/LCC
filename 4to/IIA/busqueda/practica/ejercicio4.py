@@ -67,20 +67,18 @@ def dfs_with_limit(problem, limit):
 
 # A estrella
 def a_star(problem):
-    l = [(problem.initial, [], [], 0)]
-    open_nodes = []
-    while l:
-        node, ancestors, actions, cost, = l.pop()
-        open_nodes += [node]
+    frontier = [(problem.initial, [], 0)]
+    closed = []
+    while frontier:
+        node, actions, cost, = frontier.pop()
         if problem.goal_test(node):
-            return node, actions, open_nodes
-        for succ, action, _ in problem.actions(node):
-            # Chequeamos los ancestros
-            if succ not in ancestors:
-                newAncestors = ancestors + [node]
-                l += [(succ, newAncestors, actions + [action], cost + problem.cost(node, succ))]
-        # Ordenamos segun la heuristica y costo
-        l.sort(key=lambda x: problem.heuristic(x[0]) + x[3], reverse=True)
+            return node, actions, cost
+        for succ, cost_ in problem.actions(node):
+            closed += [node]
+            if succ not in closed:
+                frontier += [(succ, actions + [succ], cost + cost_)]
+
+        frontier.sort(key=lambda x: problem.heuristic(x[0]) + x[2], reverse=True)
 
 
 # Problema de los ocho numeros
@@ -96,17 +94,17 @@ class EightPuzzle(Problem):
         newStates = []
         (iz, jz) = self.search_zero(state)
         if iz > 0:
-            actions += [(iz - 1, jz, "arriba")]
+            actions += [(iz - 1, jz)]
         if iz < 2:
-            actions += [(iz + 1, jz, "abajo")]
+            actions += [(iz + 1, jz)]
         if jz > 0:
-            actions += [(iz, jz - 1, "izquierda")]
+            actions += [(iz, jz - 1)]
         if jz < 2:
-            actions += [(iz, jz + 1, "derecha")]
-        for (i, j, action) in actions:
+            actions += [(iz, jz + 1)]
+        for (i, j) in actions:
             newState = copy.deepcopy(state)
             newState[i][j], newState[iz][jz] = newState[iz][jz], newState[i][j]
-            newStates += [(newState, action, 1)]
+            newStates += [(newState, 1)]
         return newStates
 
     def goal_test(self, state):
@@ -149,7 +147,7 @@ class EightPuzzle(Problem):
 
 if __name__ == "__main__":
     problem = EightPuzzle()
-    node, actions, open_nodes = a_star(problem)
-    print(node)
-    print(actions)
-    print(len(open_nodes))
+    print(a_star(problem))
+
+
+

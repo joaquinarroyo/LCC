@@ -82,11 +82,11 @@ class Problem:
         for orientation in self.robot.posible_rotations():
             robot = self.robot.copy()
             robot.rotate(orientation)
-            actions += [(robot, (orientation, "R"))]
+            actions += [(robot, (orientation, "R"), 1)]
         for position in self.robot.posible_moves():
             robot = self.robot.copy()
             robot.move()
-            actions += [(robot, (position, "M"))]
+            actions += [(robot, (position, "M"), 2)]
         return actions
 
     def goal_test(self, state):
@@ -94,33 +94,35 @@ class Problem:
     
 # A estrella
 def a_star(problem):
-    l = [(problem.robot, [], [], 0)]
-    c = 0
-    while l:
-        node, ancestors, actions, cost = l.pop()
+    frontier = [(problem.robot, [], 0)]
+    closed = []
+    while frontier:
+        node, actions, cost = frontier.pop()
         problem.set_robot(node)
-
+        closed += [(node.get_position(), node.orientation)]
         if problem.goal_test(node):
             return node, actions, cost
 
-        for succ, action in problem.actions():
+        for succ, action, cost_ in problem.actions():
             # Chequeamos los ancestros
-            if succ.get_position() not in ancestors:
-                newAncestors = ancestors + [(node.get_position())]
-                l += [(succ, newAncestors, actions + [action], cost + problem.cost(action))]
-        l.sort(key=lambda x: x[3], reverse=True)
+            if (succ.get_position(), succ.orientation) not in closed:
+                frontier += [(succ, actions + [action], cost + cost_)]
+        frontier.sort(key=lambda x: x[2], reverse=True)
 
-# 5x5
-map_ = [
-    [0, 0, 0, 0, 0],
-    [1, 0, 1, 1, 0],
-    [0, 0, 0, 0, 0],
-    [1, 0, 1, 1, 1],
-    [0, 0, 0, 0, 0]
-]
+if __name__ == "__main__":
+    # 5x5
+    map_ = [
+        [0, 0, 0, 0, 0],
+        [1, 0, 1, 1, 0],
+        [0, 0, 0, 0, 0],
+        [1, 0, 1, 1, 1],
+        [0, 0, 0, 0, 0]
+    ]
 
-start_x = 4
-start_y = 4
-problem = Problem(Robot("N", start_x, start_y, map_), (0, 0))
-_, actions, cost = a_star(problem)
-print(actions, "Costo:", cost)
+    start_x, start_y = 4, 4
+    start_orientation = "N"
+    robot = Robot(start_orientation, start_x, start_y, map_)
+    goal = (0, 0)
+    problem = Problem(robot, goal)
+    _, actions, cost = a_star(problem)
+    print(actions, "Costo:", cost)
