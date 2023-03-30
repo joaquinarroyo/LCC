@@ -1,5 +1,5 @@
 # Introducción a la Inteligencia Artificial _2023_
 Contenido:
 - Teoría
-- Prácticas (Las de código)
+- Práctica: Búsqueda (código)
 - TPs: 1
