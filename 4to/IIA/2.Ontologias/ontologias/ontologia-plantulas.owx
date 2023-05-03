@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/joaqu/ontologies/2023/3/untitled-ontology-4"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/joaqu/ontologies/2023/3/untitled-ontology-4">
+    <Prefix name="" IRI="http://www.semanticweb.org/joaqu/ontologies/2023/3/untitled-ontology-4/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Anuales"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Apice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Convolvulus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Forma_de_hoja"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lanceolada"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Latifoliada"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nervadura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Perennes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Plantula"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tallo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#posee_organo_subterraneo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tiene_apice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tiene_forma_de_hoja"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tiene_nervadura"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tiene_tallo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Agudo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Convolvulus"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Erecto_ascendente"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Normal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Obtuso"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Oval"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Paralela"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Physalis_Viscosa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rastrero_voluble"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Reticulada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sagitada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Wedelia_Glauca"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Convolvulus"/>
+        <ObjectIntersectionOf>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#tiene_apice"/>
+                <NamedIndividual IRI="#Obtuso"/>
+            </ObjectHasValue>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#tiene_forma_de_hoja"/>
+                <NamedIndividual IRI="#Sagitada"/>
+            </ObjectHasValue>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#tiene_nervadura"/>
+                <NamedIndividual IRI="#Reticulada"/>
+            </ObjectHasValue>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#tiene_tallo"/>
+                <NamedIndividual IRI="#Rastrero_voluble"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Anuales"/>
+        <Class IRI="#Latifoliada"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Convolvulus"/>
+        <Class IRI="#Perennes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lanceolada"/>
+        <Class IRI="#Forma_de_hoja"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Latifoliada"/>
+        <Class IRI="#Plantula"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Perennes"/>
+        <Class IRI="#Latifoliada"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Anuales"/>
+        <Class IRI="#Perennes"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Apice"/>
+        <NamedIndividual IRI="#Agudo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Perennes"/>
+        <NamedIndividual IRI="#Convolvulus"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tallo"/>
+        <NamedIndividual IRI="#Erecto_ascendente"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lanceolada"/>
+        <NamedIndividual IRI="#Normal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Apice"/>
+        <NamedIndividual IRI="#Obtuso"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Lanceolada"/>
+        <NamedIndividual IRI="#Oval"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nervadura"/>
+        <NamedIndividual IRI="#Paralela"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Perennes"/>
+        <NamedIndividual IRI="#Physalis_Viscosa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tallo"/>
+        <NamedIndividual IRI="#Rastrero_voluble"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nervadura"/>
+        <NamedIndividual IRI="#Reticulada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Forma_de_hoja"/>
+        <NamedIndividual IRI="#Sagitada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Perennes"/>
+        <NamedIndividual IRI="#Wedelia_Glauca"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tiene_apice"/>
+        <NamedIndividual IRI="#Convolvulus"/>
+        <NamedIndividual IRI="#Obtuso"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tiene_forma_de_hoja"/>
+        <NamedIndividual IRI="#Convolvulus"/>
+        <NamedIndividual IRI="#Sagitada"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tiene_tallo"/>
+        <NamedIndividual IRI="#Convolvulus"/>
+        <NamedIndividual IRI="#Rastrero_voluble"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tiene_forma_de_hoja"/>
+        <NamedIndividual IRI="#Physalis_Viscosa"/>
+        <NamedIndividual IRI="#Oval"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tiene_nervadura"/>
+        <NamedIndividual IRI="#Physalis_Viscosa"/>
+        <NamedIndividual IRI="#Paralela"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tiene_apice"/>
+        <NamedIndividual IRI="#Wedelia_Glauca"/>
+        <NamedIndividual IRI="#Agudo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tiene_forma_de_hoja"/>
+        <NamedIndividual IRI="#Wedelia_Glauca"/>
+        <NamedIndividual IRI="#Normal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tiene_nervadura"/>
+        <NamedIndividual IRI="#Wedelia_Glauca"/>
+        <NamedIndividual IRI="#Reticulada"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tiene_tallo"/>
+        <NamedIndividual IRI="#Wedelia_Glauca"/>
+        <NamedIndividual IRI="#Erecto_ascendente"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#posee_organo_subterraneo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tiene_apice"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tiene_forma_de_hoja"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tiene_nervadura"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#tiene_tallo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#posee_organo_subterraneo"/>
+        <Class IRI="#Perennes"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tiene_apice"/>
+        <Class IRI="#Plantula"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tiene_forma_de_hoja"/>
+        <Class IRI="#Plantula"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tiene_nervadura"/>
+        <Class IRI="#Plantula"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tiene_tallo"/>
+        <Class IRI="#Plantula"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tiene_apice"/>
+        <Class IRI="#Apice"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tiene_forma_de_hoja"/>
+        <Class IRI="#Forma_de_hoja"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tiene_nervadura"/>
+        <Class IRI="#Nervadura"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tiene_tallo"/>
+        <Class IRI="#Tallo"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

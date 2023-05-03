@@ -1,0 +1,500 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/joaqu/ontologies/2023/3/untitled-ontology-14"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/joaqu/ontologies/2023/3/untitled-ontology-14">
+    <Prefix name="" IRI="http://www.semanticweb.org/joaqu/ontologies/2023/3/untitled-ontology-14/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Acciones"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Banco"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CUIL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CUIT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cliente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CuentaBancaria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dolar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Identificacion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Inversion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Moneda"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Persona"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonaFisica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonaJuridica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Peso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Plazo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlazoFijo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlazoFijo30DD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlazoFijo30DP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlazoFijo60DD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlazoFijo60DP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#30D"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#60D"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCC"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCUIL"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCUIT"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCliente"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCuenta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIdentificacion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMoneda"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlazo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#valorCUIL"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#valorCUIT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BBVA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CUILJuan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CuentaJuan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Juan"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Cliente"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Persona"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasCuenta"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PlazoFijo30DD"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PlazoFijo"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMoneda"/>
+                <Class IRI="#Dolar"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPlazo"/>
+                <Class IRI="#30D"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PlazoFijo30DP"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PlazoFijo"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMoneda"/>
+                <Class IRI="#Peso"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPlazo"/>
+                <Class IRI="#30D"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PlazoFijo60DD"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PlazoFijo"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMoneda"/>
+                <Class IRI="#Dolar"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPlazo"/>
+                <Class IRI="#60D"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PlazoFijo60DP"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PlazoFijo"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMoneda"/>
+                <Class IRI="#Peso"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPlazo"/>
+                <Class IRI="#60D"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Acciones"/>
+        <Class IRI="#Inversion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CA"/>
+        <Class IRI="#CuentaBancaria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CC"/>
+        <Class IRI="#CuentaBancaria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CUIL"/>
+        <Class IRI="#Identificacion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CUIT"/>
+        <Class IRI="#Identificacion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cliente"/>
+        <Class IRI="#Banco"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CuentaBancaria"/>
+        <Class IRI="#Banco"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dolar"/>
+        <Class IRI="#Moneda"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Inversion"/>
+        <Class IRI="#Banco"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonaJuridica"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Peso"/>
+        <Class IRI="#Moneda"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlazoFijo"/>
+        <Class IRI="#Inversion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlazoFijo30DD"/>
+        <Class IRI="#PlazoFijo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlazoFijo30DP"/>
+        <Class IRI="#PlazoFijo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlazoFijo60DD"/>
+        <Class IRI="#PlazoFijo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlazoFijo60DP"/>
+        <Class IRI="#PlazoFijo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#30D"/>
+        <Class IRI="#Plazo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#60D"/>
+        <Class IRI="#Plazo"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Acciones"/>
+        <Class IRI="#PlazoFijo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CA"/>
+        <Class IRI="#CC"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CUIL"/>
+        <Class IRI="#CUIT"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Cliente"/>
+        <Class IRI="#CuentaBancaria"/>
+        <Class IRI="#Inversion"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CuentaBancaria"/>
+        <Class IRI="#Inversion"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dolar"/>
+        <Class IRI="#Peso"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PersonaJuridica"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PlazoFijo30DD"/>
+        <Class IRI="#PlazoFijo30DP"/>
+        <Class IRI="#PlazoFijo60DD"/>
+        <Class IRI="#PlazoFijo60DP"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#30D"/>
+        <Class IRI="#60D"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Banco"/>
+        <NamedIndividual IRI="#BBVA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CUIL"/>
+        <NamedIndividual IRI="#CUILJuan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CA"/>
+        <NamedIndividual IRI="#CuentaJuan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cliente"/>
+        <NamedIndividual IRI="#Juan"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCliente"/>
+        <NamedIndividual IRI="#BBVA"/>
+        <NamedIndividual IRI="#Juan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCA"/>
+        <NamedIndividual IRI="#CUILJuan"/>
+        <NamedIndividual IRI="#CuentaJuan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCuenta"/>
+        <NamedIndividual IRI="#Juan"/>
+        <NamedIndividual IRI="#CuentaJuan"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#valorCUIL"/>
+        <NamedIndividual IRI="#CUILJuan"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">123123123</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCA"/>
+        <ObjectProperty IRI="#hasCuenta"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCC"/>
+        <ObjectProperty IRI="#hasCuenta"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCUIL"/>
+        <ObjectProperty IRI="#hasIdentificacion"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCUIT"/>
+        <ObjectProperty IRI="#hasIdentificacion"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCliente"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCuenta"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasIdentificacion"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMoneda"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPlazo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCUIL"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCUIT"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasIdentificacion"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasMoneda"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasPlazo"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCA"/>
+        <Class IRI="#PersonaFisica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCC"/>
+        <Class IRI="#Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCUIL"/>
+        <Class IRI="#PersonaFisica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCUIT"/>
+        <Class IRI="#PersonaJuridica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCliente"/>
+        <Class IRI="#Banco"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCuenta"/>
+        <Class IRI="#Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasIdentificacion"/>
+        <Class IRI="#Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMoneda"/>
+        <Class IRI="#PlazoFijo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlazo"/>
+        <Class IRI="#PlazoFijo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCA"/>
+        <Class IRI="#CA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCC"/>
+        <Class IRI="#CC"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCUIL"/>
+        <Class IRI="#CUIL"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCUIT"/>
+        <Class IRI="#CUIT"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCliente"/>
+        <Class IRI="#Cliente"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCuenta"/>
+        <Class IRI="#CuentaBancaria"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasIdentificacion"/>
+        <Class IRI="#Identificacion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMoneda"/>
+        <Class IRI="#Moneda"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlazo"/>
+        <Class IRI="#Plazo"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#valorCUIL"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#valorCUIT"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#valorCUIL"/>
+        <Class IRI="#CUIL"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#valorCUIT"/>
+        <Class IRI="#CUIT"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#valorCUIL"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#valorCUIT"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
