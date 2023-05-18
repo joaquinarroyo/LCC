@@ -11,3 +11,7 @@ Contenido:
     - Satecharts (Latex)
 - Libros
     - UsingZ
+- Resúmenes:
+    - Parcial I (Intro + Z)
+    - Parcial II (StateCharts + CSP)
+- Parciales
