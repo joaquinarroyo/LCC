@@ -1,0 +1,24 @@
+# Ingeniería de Software I _2023_
+Contenido:
+- Introducción
+- Z
+    - Apunte teórico
+    - Práctica
+- Statecharts
+    - Apuntes teóricos
+    - Paper de Harel
+    - Práctica
+- CSP
+    - Apunte teórico
+- TLA
+    - Apunte teórico
+- Tópicos Avanzados
+    - Apunte teórico
+- Libros
+    - UsingZ
+    - CSP Hoare
+- Resumen I (Intro + Z)
+- Resumen II (Stetachars + CSP)
+- Resumen III (TLA + Tópicos Avanzados) (WIP)
+- Ejercicios de Z
+- Ejercicios de Statechars+CSP
