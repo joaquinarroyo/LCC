@@ -1,0 +1,2727 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17/"
+     xml:base="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-17="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#comesFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#comesFrom">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#givesBean"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeePlant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#givesBean -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#givesBean">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#isIngredient"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#isIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#isIngredient">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#GrindSize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumGrind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Alcohol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Alcohol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Americano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Americano">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#comesFrom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaArabicaPlant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#comesFrom"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaArabicaPlant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BadCoffee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BadCoffee">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Black -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Black">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chemex"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBag"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chemex"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBag"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Bonbon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Bonbon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CondensedMilk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cream"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CondensedMilk"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cream"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Borgia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Borgia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cinnamon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OrangePeel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cinnamon"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OrangePeel"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LongTime"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ShortTime"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Capuccino -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Capuccino">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MilkFoam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MilkFoam"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Caramel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Caramel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cardamom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cardamom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Spices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chemex -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chemex">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumGrind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cinnamon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cinnamon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Spices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaArabicaPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaArabicaPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeePlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaCanephoraPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaCanephoraPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeePlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaExcelsaPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaExcelsaPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeePlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaLibericaPlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaLibericaPlant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeePlant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBag -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBag">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumGrind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeePlant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeePlant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeUsesCoarseGrind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeUsesCoarseGrind">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#UsesCoarseGrind"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdBrew -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdBrew">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoarseGrind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdWater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdWater">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ComplexCoffee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ComplexCoffee">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CondensedMilk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CondensedMilk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Dairy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cortado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cortado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cream -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cream">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Dairy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cubano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cubano">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#DarkRoast"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Dairy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Dairy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Espresso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Espresso">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumGrind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaBean -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaBean">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#comesFrom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaExcelsaPlant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#comesFrom"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaExcelsaPlant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FlatWhite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FlatWhite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Frappe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Frappe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Freddo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Freddo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoarseGrind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Fruits -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Fruits">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#GrindSize -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#GrindSize">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoarseGrind"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FineGrind"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumGrind"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#HasDairy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#HasDairy">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Dairy"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Irish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Irish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Whiskey"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Whiskey"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Latte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Latte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MilkFoam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MilkFoam"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lemon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lemon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Fruits"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OrangePeel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaBean -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaBean">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#comesFrom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaLibericaPlant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#comesFrom"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaLibericaPlant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Liqueur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Liqueur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Alcohol"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Whiskey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lungo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lungo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LongTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Mazagran -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Mazagran">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lemon"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lemon"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Dairy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MilkFoam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MilkFoam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Dairy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Mocha -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Mocha">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MilkFoam"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MilkFoam"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumGrind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Nutmeg -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Nutmeg">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Spices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OrangePeel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OrangePeel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Fruits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OtherThanEspressoMachine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OtherThanEspressoMachine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ristretto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ristretto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ShortTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#DarkRoast"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LightRoast"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Medium-DarkRoast"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RobustaBean -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RobustaBean">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#comesFrom"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaCanephoraPlant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#comesFrom"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaCanephoraPlant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Spices -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Spices">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Dairy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StrongCoffees -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StrongCoffees">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LongTime"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#DarkRoast"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sugar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sugar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SweetCoffees -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SweetCoffees">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Turkish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Turkish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Liqueur"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sugar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBean"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesRoast"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Liqueur"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sugar"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesBrewMethod"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FineGrind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#UsesCoarseGrind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#UsesCoarseGrind">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#usesGrind"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoarseGrind"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Vanilla -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Vanilla">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Dairy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Whiskey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Whiskey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Alcohol"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Amareto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Amareto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Liqueur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Americano-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Americano-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Americano"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:comesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaPlant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaPlant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaPlant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Baileys -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Baileys">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Liqueur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Black-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Black-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Black"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chemex"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#DarkRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Black-2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Black-2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Black"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LightRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Bonbon-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Bonbon-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Bonbon"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CondensedMIlk"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cream"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Borgia-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Borgia-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Borgia"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cinnamon"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OrangePeel"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CanephoraPlant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CanephoraPlant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Capuccino-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Capuccino-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Capuccino"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MIlkFoam"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Caramel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Caramel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Caramel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cardamom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cardamom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cardamom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chemex -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chemex">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chemex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cinnamon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cinnamon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cinnamon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoarseGrind -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoarseGrind">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#GrindSize"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeBag -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeBag">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdBrew -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdBrew">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdBrew"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdWater -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdWater">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdWater"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CondensedMIlk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CondensedMIlk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CondensedMilk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cortado-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cortado-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cortado"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LongTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cortado-2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cortado-2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cortado"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ShortTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Medium-DarkRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cream -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cream">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cream"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cubano-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cubano-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cubano"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RobustaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ShortTime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#DarkRoast -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#DarkRoast">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Espresso-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Espresso-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Espresso"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaBean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaBean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaBean"/>
+        <untitled-ontology-17:comesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaPlant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaPlant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaPlant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FineGrind -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FineGrind">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#GrindSize"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FlatWhite-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FlatWhite-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FlatWhite"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LightRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Frappe-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Frappe-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Frappe"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Caramel"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Vanilla"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Freddo-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Freddo-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Freddo"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sugar"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Medium-DarkRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Irish-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Irish-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Irish"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#IrishWhiskey"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#IrishWhiskey -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#IrishWhiskey">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Whiskey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Latte-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Latte-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Latte"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MIlkFoam"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LightRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lemon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lemon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lemon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaBean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaBean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaBean"/>
+        <untitled-ontology-17:comesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaPlant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaPlant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaPlant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LightRoast -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LightRoast">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LongTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LongTime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lungo-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lungo-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lungo"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Medium-DarkRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MIlkFoam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MIlkFoam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MilkFoam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Mazagran-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Mazagran-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Mazagran"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Lemon"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Medium-DarkRoast -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Medium-DarkRoast">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumGrind -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumGrind">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#GrindSize"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MediumRoast">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Mocha-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Mocha-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Mocha"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MIlkFoam"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot"/>
+        <untitled-ontology-17:usesBrewTime rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Medium-DarkRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Nutmeg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Nutmeg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Nutmeg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OrangePeel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OrangePeel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#OrangePeel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ristretto-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ristretto-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ristretto"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LightRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RobustaBean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RobustaBean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RobustaBean"/>
+        <untitled-ontology-17:comesFrom rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CanephoraPlant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ShortTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ShortTime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#StandardTime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sugar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sugar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sugar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Turkish-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Turkish-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Turkish"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Amareto"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sugar"/>
+        <untitled-ontology-17:hasIngredient rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater"/>
+        <untitled-ontology-17:usesBean rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaBean"/>
+        <untitled-ontology-17:usesBrewMethod rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot"/>
+        <untitled-ontology-17:usesRoast rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#DarkRoast"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Vanilla -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Vanilla">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Vanilla"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream">
+        <rdf:type rdf:resource="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Aeropress"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chemex"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBag"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdBrew"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#EspressoMachine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#FrenchPress"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Instant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MokaPot"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#TurkishPot"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Alcohol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Dairy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Fruits"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Spices"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sweets"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Water"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ArabicaBean"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ExcelsaBean"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#LibericaBean"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RobustaBean"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewMethod"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrewTime"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeBean"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeDrink"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeeIngredient"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeePlant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#GrindSize"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#RoastType"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#BrownSugar"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Caramel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Chocolate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Sugar"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Vanilla"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cardamom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cinnamon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Nutmeg"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaArabicaPlant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaCanephoraPlant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaExcelsaPlant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CoffeaLibericaPlant"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#ColdWater"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Ice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WarmWater"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#CondensedMilk"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Cream"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#Milk"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#MilkFoam"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#SteamedMilk"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fran_local/ontologies/2023/4/untitled-ontology-17#WhippedCream"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
