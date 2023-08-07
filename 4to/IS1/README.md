@@ -4,6 +4,7 @@ Contenido:
 - Z
     - Apunte teórico
     - Práctica
+    - Soluciones
 - Statecharts
     - Apuntes teóricos
     - Paper de Harel
@@ -13,12 +14,14 @@ Contenido:
 - TLA
     - Apunte teórico
 - Tópicos Avanzados
-    - Apunte teórico
+    - Apuntes teóricos
 - Libros
     - UsingZ
     - CSP Hoare
+    - TLA
 - Resumen I (Intro + Z)
-- Resumen II (Stetachars + CSP)
-- Resumen III (TLA + Tópicos Avanzados) (WIP)
+- Resumen II (Stetachars + CSP + TLA + Tópicos Avanzados)
 - Ejercicios de Z
-- Ejercicios de Statechars+CSP
+- Ejercicios de Statechars + CSP
+- Ejercicios de TLA + Tópicos Avanzados
+- Enunciados de ejercicios teóricos y prácticos tomados en finales
