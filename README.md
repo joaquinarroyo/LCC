@@ -18,4 +18,7 @@ Contenido de materias de la carrera Licenciatura en Ciencias de la Computación 
 - 4to Año
   - Sistemas Operativos II (2022)
   - Introducción a la Inteligencia Artificial (2023) 
-  - Ingenieria del Software (2023)
+  - Ingenieria de Software I (2023)
+  - Complementos de Matemática II (2023)
+  - Ingeniería de Software II (2023)
+  - Compiladores (2023)
