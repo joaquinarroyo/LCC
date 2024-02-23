@@ -1,0 +1,973 @@
+\documentclass[fleqn,colorlinks,linkcolor=blue,citecolor=blue,urlcolor=blue]{article}
+
+% Packages
+\usepackage[spanish]{babel}
+\usepackage[nottoc]{tocbibind}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3.5cm,right=3.5cm,marginparwidth=2.5cm]{geometry}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[pdftex,colorlinks,linkcolor=blue]{hyperref}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{stackrel}
+\usepackage{proof}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{z-eves}
+\usepackage{dirtree}
+\usepackage{multicol}
+
+% Commands
+\newcommand{\negate}[0]{-}
+\newcommand{\desig}[2]{\item #1 $\approx #2$}
+
+\title{TP-FINAL-IS}
+\author{Joaquin Arroyo}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{LOGO_UNR_NEGRO.png}
+    \end{figure}
+    {\bfseries\LARGE Universidad Nacional de Rosario \par}
+    \vspace{1cm}
+    {\scshape\Large Facultad de Ciencias Exactas, Ingeniería y Agrimensura  \par}
+    \vspace{0.2cm}
+    {\scshape\large Licenciatura en Ciencias de la Computación \par}
+    \vspace{3cm}
+    {\scshape\Huge Trabajo Práctico Final sobre Verificación de Software \par}
+    \vspace{3cm}
+    {\itshape\Large Ingeniería de Software I y II\par}
+    \vfill
+    {\Large Joaquín Arroyo \par}
+    \vfill
+    \today
+\end{titlepage}
+\makeatletter
+
+\tableofcontents
+\newpage 
+
+\section{Introducción}
+
+Este trabajo tiene como objetivo verificar un problema de software a través de un proceso que inicia con su especificación formal, la formulación de propiedades/teoremas y sus respectivas demostraciones, seguido de simulaciones y concluyendo con la creación de casos de prueba.
+
+\vspace{0.1cm}
+
+Las herramientas/tecnologías utilizadas para la realización del trabajo son las siguientes:
+
+\begin{itemize}
+    \item \textit{Z}
+
+    \item \textit{\{log\}}
+
+    \item \textit{Z/EVES}
+
+    \item \textit{FASTEST}
+\end{itemize}
+
+\subsection{Enunciado del problema}
+
+\noindent 
+\textbf{Sistema de Gestión de Stock de Productos.} Se busca desarrollar un sistema de gestión de stock para una tienda en línea que administre la disponibilidad, compra, venta y reposición de productos. Este sistema tiene como objetivo principal mantener actualizados los niveles de inventario y asegurar la disponibilidad de productos para su venta.
+
+\vspace{0.2cm}
+
+\noindent
+El sistema debe ser capaz de:
+
+\begin{enumerate}
+    \item Definir y mantener registros de los diferentes tipos de datos como Producto, Stock, Pedido, etc.
+
+    \item Realizar operaciones como añadir un producto al stock, realizar una venta, actualizar la cantidad de productos disponibles, etc.
+\end{enumerate}
+
+\noindent
+Además el sistema debe:
+
+\begin{enumerate}
+    \item Mantener invariantes en tiempo de ejecución, como la ausencia de un stock negativo, la correcta actualización del stock tras una venta, etc.
+
+    \item Cumplir con propiedades deseables, como la consistencia de la base de datos de stock, la integridad de la gestión de pedidos y reposiciones, la actualización correcta de los niveles de stock después de las ventas, etc.
+\end{enumerate}
+
+\section{Especificación}
+
+\subsection{Designaciones}
+
+\begin{itemize}
+    \desig{\textit{p} es un producto}{p \in PRODUCT}
+    \desig{\textit{pid} es un identificador de producto}{pid \in PID}
+    \desig{\textit{m} es el mensaje que devuelve una operación}{m \in Msg}
+    \desig{Se agrega un nuevo producto \textit{p} con un identificador \textit{pid}}{ AddNewProduct(pid, p)}
+    \desig{Se le añade stock \textit{c} a un producto con id \textit{pid}}{AddStock(pid, c)}
+    \desig{Se elimina stock \textit{c} a un producto con id \textit{pid}}{RemoveStock(pid, c)}
+    \desig{Se realiza una venta del producto \textit{pid} con cantidad \textit{c}} {NewSell(pid, c)}
+\end{itemize}
+
+\subsection{Especificación en Z}
+
+Se introducen los tipos utilizados en la especificación.
+
+\begin{zed}
+[PID, PRODUCT]
+\also
+MSG ::= error | ok
+\end{zed}
+
+Definimos las variables de estado con su estado inicial.
+
+\begin{schema}{Store}
+stock : PID \rel \nat \\
+products : PID \rel PRODUCT \\
+sells : PID \rel \seq \nat
+\end{schema}
+
+\begin{schema}{StoreInit}
+Store
+\where
+stock = \emptyset \\
+products = \emptyset \\
+sells = \emptyset
+\end{schema}
+
+Invariantes de normalización de variables de estado.
+
+\begin{schema}{PfunStockInv}
+Store
+\where
+stock \in PID \pfun \nat
+\end{schema}
+
+\begin{schema}{PfunProductsInv}
+Store
+\where
+products \in PID \pfun PRODUCT
+\end{schema}
+
+\begin{schema}{PfunSellsInv}
+Store
+\where
+sells \in PID \pfun \seq \nat
+\end{schema}
+
+Invariante que establece que todo producto existente tiene un stock asociado.
+
+\begin{schema}{ProductsStockInv}
+Store
+\where
+\dom~products = \dom~stock
+\end{schema}
+
+Invariante que establece que el stock de los productos es mayor o igual a cero.
+
+\begin{schema}{StockQuantityInv}
+Store
+\where
+\ran~stock \subseteq \nat
+\end{schema}
+
+Invariante que establece que todo producto existente tiene 0 o más ventas.
+
+\begin{schema}{ProductsSellsInv}
+Store
+\where
+\dom~products = \dom~sells
+\end{schema}
+
+\newpage
+
+Las operaciones modeladas permiten agregar un nuevo producto al sistema, agregar/remover stock a un producto existente, y persistir la venta de un producto existente.
+
+\vspace{0.3cm}
+
+\noindent
+\textbf{AddNewProduct.} La siguiente operación permite agregar un nuevo producto al sistema. Es necesario verificar que el identificador del producto no esté ya ingresado.
+
+\begin{schema}{AddNewProductOk}
+\Delta Store \\
+pid? : PID \\
+p? : PRODUCT \\
+m! : MSG \\
+\where
+pid? \notin \dom~products \\
+products' = products \cup \{pid? \mapsto p?\} \\
+stock' = stock \cup \{pid? \mapsto 0\} \\
+sells' = sells \cup \{pid? \mapsto \langle \rangle\} \\
+m! = ok 
+\end{schema}
+
+\begin{schema}{ExistingPidError}
+\Xi Store \\
+pid? : PID \\
+m! : MSG \\
+\where
+pid? \in \dom~products \\
+m! = error
+\end{schema}
+
+\begin{zed}
+AddNewProduct == AddNewProductOk \lor ExistingPidError
+\end{zed}
+
+\noindent
+\textbf{AddStock.} La siguiente operación permite agregar stock a un producto. Es necesario verificar que el identificador del producto esté ya ingresado, es decir, que el producto exista, y que además la cantidad de stock sea positiva.
+
+\begin{schema}{AddStockOk}
+\Delta Store \\
+pid? : PID \\
+c? : \nat \\
+m! : MSG \\
+\where
+c? > 0 \\
+pid? \in \dom~products \\
+stock' = stock \oplus \{pid? \mapsto stock~pid? + c? \} \\
+products' = products \\
+sells' = sells \\
+m! = ok
+\end{schema}
+
+\begin{schema}{StockQuantityError}
+\Xi Store \\
+c? : \nat \\
+m! : MSG \\
+\where
+c? \leq 0 \\
+m! = error
+\end{schema}
+
+\begin{schema}{UnexistingPidError}
+\Xi Store \\
+pid? : PID \\
+m! : MSG \\
+\where
+pid? \notin \dom~products \\
+m! = error
+\end{schema}
+
+\begin{zed} 
+AddStock == AddStockOk \lor UnexistingPidError \lor StockQuantityError
+\end{zed}
+
+\noindent
+\textbf{RemoveStock.}  La siguiente operación permite remover stock de un producto. Es necesario verificar que el identificador del producto esté ya ingresado, y además que la cantidad a remover exista.
+
+\begin{schema}{RemoveStockOk}
+\Delta Store \\
+pid? : PID \\
+c? : \nat \\
+m! : MSG \\
+\where
+c? > 0 \\
+pid? \in \dom~products \\
+stock~pid? - c?  \geq 0 \\
+stock' = stock \oplus \{pid? \mapsto stock~pid? - c?\} \\
+sells' = sells \\
+products' = products \\
+m! = ok
+\end{schema}
+
+\begin{schema}{NotEnoughStockError}
+\Xi Store \\
+pid? : PID \\
+c? : \nat \\
+m! : MSG \\
+\where
+pid? \in \dom~products \\
+stock(pid?) - c? < 0 \\
+m! = error
+\end{schema}
+
+\begin{zed}
+RemoveStock == RemoveStockOk \lor StockQuantityError \lor UnexistingPidError \lor NotEnoughStockError
+\end{zed}
+
+\noindent
+\textbf{NewSell.} La siguiente operación permite persistir la venta de un producto con una cantidad asociada. Es necesario verificar que el producto exista, además la cantidad a vender debe ser positiva y debe haber stock del producto. Esta operación no solo persiste la venta, si no también actualiza el stock del producto vendido.
+
+\begin{schema}{NewSellOk}
+\Delta Store \\
+pid? : PID \\
+c? : \nat \\
+m! : MSG \\
+\where
+c? > 0 \\
+pid? \in \dom~products \\
+stock~pid? - c?\geq 0 \\
+sells' = sells \oplus \{pid? \mapsto sells~pid? \cat \langle c? \rangle\} \\
+stock' = stock \oplus \{pid? \mapsto stock~pid? - c?\} \\
+products' = products \\
+m! = ok
+\end{schema}
+
+\begin{zed} 
+NewSell == NewSellOk \lor StockQuantityError \lor UnexistingPidError \lor NotEnoughStockError 
+\end{zed}
+
+\subsection{Simulaciones en \textit{\{log\}}}
+
+Notar que para la traducción de la especificación \textit{Z} a \textit{\{log\}} fue necesario utilizar funciones sobre listas definidas en la librería \textit{setlogliblist.slog} mencionada en la página oficial de setlog. 
+
+Al necesitar estas funciones tipadas, y por problemas con el \textit{VCG}, el cuál no reconocía las funciones importadas, dichas funciones fueron copiadas y tipadas en el código de la traducción de la especificación \textit{Z} (En la siguiente sección se profundiza más sobre estos problemas). 
+
+\vspace{0.2cm}
+
+\noindent
+\textbf{Simulación 1.} En esta simulación, se agrega el producto (1, p1) al sistema, luego se le da un stock de 10 unidades, y por último se venden 5 unidades de dicho producto en un primer momento, y luego otras 5.
+
+\begin{verbatim}
+storeInit(Stock, Products, Sells)                                             & 
+addNewProduct(Stock, Products, Sells, 1, 'p1', ok, Stock1, Products1, Sells1) &
+addStock(Stock1, Products1, Sells1, 1, 10, ok, Stock2, Products2, Sells2)     &
+newSell(Stock2, Products2, Sells2, 1, 5, ok, Stock3, Products3, Sells3)       &
+newSell(Stock3, Products3, Sells3, 1, 5, ok, Stock_, Products_, Sells_).
+
+Resultado:
+
+Stock     = {},
+Products  = {},
+Sells     = {},
+Stock1    = {[1,0]},
+Products1 = {[1,p1]},
+Sells1    = {[1,{}]},
+Stock2    = {[1,10]},
+Products2 = {[1,p1]},
+Sells2    = {[1,{}]},
+Stock3    = {[1,5]},
+Products3 = {[1,p1]},
+Sells3    = {[1,{[1,5]}]},
+Stock_    = {[1,0]},
+Products_ = {[1,p1]},
+Sells_    = {[1,{[2,5],[1,5]}]}
+\end{verbatim}
+
+\noindent
+\textbf{Simulación 2.} En la segunda simulación, agregamos el producto $(2, p2)$ al sistema, luego le damos un stock de 5 unidades, intentamos vender 6 unidades lo cuál deriva en un error, continuamos agregando una unidad al stock del producto $p2$, y nuevamente intentamos vender 6 unidades de dicho producto.
+
+\begin{verbatim}
+storeInit(Stock, Products, Sells)                                             & 
+addNewProduct(Stock, Products, Sells, 2, 'p2', ok, Stock1, Products1, Sells1) & 
+addStock(Stock1, Products1, Sells1, 2, 5, ok, Stock2, Products2, Sells2)      &
+newSell(Stock2, Products2, Sells2, 2, 6, error, Stock3, Products3, Sells3)    & 
+addStock(Stock3, Products3, Sells3, 2, 1, ok, Stock4, Products4, Sells4)      & 
+newSell(Stock4, Products4, Sells4, 2, 6, ok, Stock_, Products_, Sells_).
+
+Resultado:
+
+Stock     = {},
+Products  = {},
+Sells     = {},
+Stock1    = {[2,0]},
+Products1 = {[2,p2]},
+Sells1    = {[2,{}]},
+Stock2    = {[2,5]},
+Products2 = {[2,p2]},
+Sells2    = {[2,{}]},
+Stock3    = {[2,5]},
+Products3 = {[2,p2]},
+Sells3    = {[2,{}]},
+Stock4    = {[2,6]},
+Products4 = {[2,p2]},
+Sells4    = {[2,{}]},
+Stock_    = {[2,0]},
+Products_ = {[2,p2]},
+Sells_    = {[2,{[1,6]}]}
+\end{verbatim}
+
+\subsection{VCG en \textit{\{log\}}}
+
+En la primera interacción con el VCG, tuve problemas debido a la utilización de la librería oficial de listas de \textit{setlog}, ya que las funciones utilizadas de dicha librería no eran reconocidas por el VCG.
+
+En primera instancia, intenté agregar la cláusula \textit{consult\_lib.} en el código del VCG, lo cuál no funcionó. Luego, como solución final, no solo por este problema, sino también por lo mencionado en la sección anterior acerca del tipado, decidí incluir las dos funciones utilizadas en el archivo de mi especificación, en el cuál además las tipé.
+
+Finalmente, pude ejecutar el VCG y llamar al método generado por este para verificar las condiciones de verificación. Luego de esto, fallaron la condiciones $addNewProduct\_pi\_pfunStockInv$ y $addNewProduct\_pi\_pfunSellsInv$ por lo que pasé a utilizar el comando \textbf{findh} el cuál me devolvió las hipótesis $productStockInv$ y $productsSellsInv$ para agregar sobre dichas condiciones respectivamente. Luego de agregar dichas hipótesis, volví a ejecutar las condiciones de verificación obteniendo un resultado exitoso. 
+
+\section{Demostración sobre \textit{Z/EVES}}
+
+El lema de invariancia elegido para demostrar es el siguiente:
+
+\begin{theorem}{AddStockPI}
+StockQuantityInv \wedge AddStock \implies StockQuantityInv'
+\end{theorem}
+
+\begin{zproof}[AddUserRightPI]
+invoke AddStock;
+split AddStockOk;
+cases;
+simplify;
+reduce;
+next;
+split UnexistingPidError;
+cases;
+simplify;
+reduce;
+next;
+split StockQuantityError;
+cases;
+simplify;
+reduce;
+next;
+simplify;
+\end{zproof}
+
+\section{Casos de prueba}
+
+Los casos de prueba fueron generados a partir de la especificación Z con FASTEST.
+
+Se generaron casos de prueba para la operación \textit{AddStock}. Para ello, se utilizaron los siguientes comandos:
+
+\begin{verbatim}
+loadspec spec.tex
+selop AddStock
+genalltt
+addtactic AddStock_DNF_1 SP \in pid? \in \dom products
+addtactic AddStock_DNF_2 SP \notin pid? \notin \dom products
+genalltt
+addtactic AddStock_DNF_1 NR c? \langle 1, 100000 \rangle
+genalltt
+addtactic AddStock_DNF_1 SP + stock(pid?) + c?
+genalltt
+prunett
+genalltca
+\end{verbatim}
+
+En primer lugar, se aplica la táctica \textit{DNF}, que separa a la clase $VIS$ en las clases $AddStock\_DNF_1$, $AddGroup\_DNF_2$ y $AddGroup\_DNF_3$ que representan los casos en donde se aplican las operaciones $AddStockOk$, $UnexistingPidError$ y $StockQuantityError$ respectivamente.
+
+Aplicamos las particiones de $\in$ y $\notin$ a las dos primeras subclases ($AddStock\_DNF_1$ y $AddStock\_DNF_2$) debido a que estas dos son las que presentan las condiciones con $\in$ y $\notin$ respectivamente. 
+
+Posteriormente, se utiliza la táctica NR en $AddStock\_DNF_1$ con el rango $\langle 1, 100000 \rangle$ debido a que esta clase es la única que presenta la condición donde el stock es positivo, así podemos obtener casos de prueba que abarquen desde una cantidad mínima hasta una considerable cantidad de stock. 
+
+Por último utilizamos nuevamente la táctica SP con el operador $+$ sobre la subclase $AddStock\_DNF_1$ debido a que esta es la que presenta la condición sobre la variable de estado $stock$ en la cuál se agrega stock al stock anterior del producto recibido.
+
+Luego, el árbol de prueba generado es el siguiente: 
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{7cm}
+\dirtree{%
+.1 $AddStock\_VIS$.
+.2 $AddStock\_DNF_1$.
+.3 $AddStock\_SP_{1}$.
+.4 $AddStock\_NR_{5}$.
+.5 $AddStock\_SP_{19}$.
+.5 $AddStock\_SP_{22}$.
+.5 $AddStock\_SP_{24}$.
+.5 $AddStock\_SP_{25}$.
+.4 $AddStock\_NR_{7}$.
+.5 $AddStock\_SP_{41}$.
+.5 $AddStock\_SP_{44}$.
+.5 $AddStock\_SP_{45}$.
+.5 $AddStock\_SP_{46}$.
+.5 $AddStock\_SP_{47}$.
+.4 $AddStock\_NR_{8}$.
+.5 $AddStock\_SP_{52}$.
+.5 $AddStock\_SP_{55}$.
+.5 $AddStock\_SP_{56}$.
+.5 $AddStock\_SP_{57}$.
+.5 $AddStock\_SP_{58}$.
+.4 $AddStock\_NR_{9}$.
+.5 $AddStock\_SP_{63}$.
+.5 $AddStock\_SP_{66}$.
+.5 $AddStock\_SP_{67}$.
+.5 $AddStock\_SP_{68}$.
+.5 $AddStock\_SP_{69}$.
+.3 $AddStock\_SP_{2}$.
+.4 $AddStock\_NR_{10}$.
+.5 $AddStock\_SP_{74}$.
+.5 $AddStock\_SP_{77}$.
+.5 $AddStock\_SP_{79}$.
+.5 $AddStock\_SP_{80}$.
+.4 $AddStock\_NR_{12}$.
+.5 $AddStock\_SP_{96}$.
+.5 $AddStock\_SP_{99}$.
+.5 $AddStock\_SP_{100}$.
+.5 $AddStock\_SP_{101}$.
+.5 $AddStock\_SP_{102}$.
+.4 $AddStock\_NR_{13}$.
+.5 $AddStock\_SP_{107}$.
+.5 $AddStock\_SP_{110}$.
+.5 $AddStock\_SP_{111}$.
+.5 $AddStock\_SP_{112}$.
+.5 $AddStock\_SP_{113}$.
+.4 $AddStock\_NR_{14}$.
+.5 $AddStock\_SP_{118}$.
+.5 $AddStock\_SP_{121}$.
+.5 $AddStock\_SP_{122}$.
+.5 $AddStock\_SP_{123}$.
+.5 $AddStock\_SP_{124}$.
+.2 $AddStock\_DNF_2$.
+.3 $AddStock\_SP_{3}$.
+.3 $AddStock\_SP_{4}$.
+.2 $AddStock\_DNF_3$.
+}
+\end{minipage}
+\caption{Árbol de prueba generado.}
+\end{figure}
+
+Y los casos de prueba abstractos generados son los siguientes:
+
+\begin{multicols}{2}
+
+\begin{schema}{AddStock\_ SP\_ 19\_ TCASE}\\
+ AddStock\_ SP\_ 19
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto \negate 4294967296 ) \} \\
+ c? = 1 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 22\_ TCASE}\\
+ AddStock\_ SP\_ 22
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 0 ) \} \\
+ c? = 1 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 24\_ TCASE}\\
+ AddStock\_ SP\_ 24
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 1 ) \} \\
+ c? = 1 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 25\_ TCASE}\\
+ AddStock\_ SP\_ 25
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 2 ) \} \\
+ c? = 1 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 41\_ TCASE}\\
+ AddStock\_ SP\_ 41
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto \negate 4294967296 ) \} \\
+ c? = 2 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 44\_ TCASE}\\
+ AddStock\_ SP\_ 44
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 0 ) \} \\
+ c? = 2 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 45\_ TCASE}\\
+ AddStock\_ SP\_ 45
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 1 ) \} \\
+ c? = 2 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 46\_ TCASE}\\
+ AddStock\_ SP\_ 46
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 2 ) \} \\
+ c? = 2 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 47\_ TCASE}\\
+ AddStock\_ SP\_ 47
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 3 ) \} \\
+ c? = 2 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 52\_ TCASE}\\
+ AddStock\_ SP\_ 52
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto \negate 4294967296 ) \} \\
+ c? = 100000 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 55\_ TCASE}\\
+ AddStock\_ SP\_ 55
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 0 ) \} \\
+ c? = 100000 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 56\_ TCASE}\\
+ AddStock\_ SP\_ 56
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 1 ) \} \\
+ c? = 100000 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 57\_ TCASE}\\
+ AddStock\_ SP\_ 57
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 100000 ) \} \\
+ c? = 100000 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 58\_ TCASE}\\
+ AddStock\_ SP\_ 58
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 100001 ) \} \\
+ c? = 100000 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 63\_ TCASE}\\
+ AddStock\_ SP\_ 63
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto \negate 4294967296 ) \} \\
+ c? = 100001 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 66\_ TCASE}\\
+ AddStock\_ SP\_ 66
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 0 ) \} \\
+ c? = 100001 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 67\_ TCASE}\\
+ AddStock\_ SP\_ 67
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 1 ) \} \\
+ c? = 100001 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 68\_ TCASE}\\
+ AddStock\_ SP\_ 68
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 100001 ) \} \\
+ c? = 100001 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 69\_ TCASE}\\
+ AddStock\_ SP\_ 69
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 100002 ) \} \\
+ c? = 100001 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 74\_ TCASE}\\
+ AddStock\_ SP\_ 74
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto \negate 4294967296 ) \} \\
+ c? = 1 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 77\_ TCASE}\\
+ AddStock\_ SP\_ 77
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 0 ) \} \\
+ c? = 1 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 79\_ TCASE}\\
+ AddStock\_ SP\_ 79
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 1 ) \} \\
+ c? = 1 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 80\_ TCASE}\\
+ AddStock\_ SP\_ 80
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 2 ) \} \\
+ c? = 1 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 96\_ TCASE}\\
+ AddStock\_ SP\_ 96
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto \negate 4294967296 ) \} \\
+ c? = 2 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 99\_ TCASE}\\
+ AddStock\_ SP\_ 99
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 0 ) \} \\
+ c? = 2 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\  ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 100\_ TCASE}\\
+ AddStock\_ SP\_ 100
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 1 ) \} \\
+ c? = 2 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 101\_ TCASE}\\
+ AddStock\_ SP\_ 101
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 2 ) \} \\
+ c? = 2 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 102\_ TCASE}\\
+ AddStock\_ SP\_ 102
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 3 ) \} \\
+ c? = 2 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 107\_ TCASE}\\
+ AddStock\_ SP\_ 107
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto \negate 4294967296 ) \} \\
+ c? = 100000 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 110\_ TCASE}\\
+ AddStock\_ SP\_ 110
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 0 ) \} \\
+ c? = 100000 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 111\_ TCASE}\\
+ AddStock\_ SP\_ 111
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 1 ) \} \\
+ c? = 100000 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 112\_ TCASE}\\
+ AddStock\_ SP\_ 112
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 100000 ) \} \\
+ c? = 100000 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 113\_ TCASE}\\
+ AddStock\_ SP\_ 113
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 100001 ) \} \\
+ c? = 100000 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 118\_ TCASE}\\
+ AddStock\_ SP\_ 118
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto \negate 4294967296 ) \} \\
+ c? = 100001 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 121\_ TCASE}\\
+ AddStock\_ SP\_ 121
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 0 ) \} \\
+ c? = 100001 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 122\_ TCASE}\\
+ AddStock\_ SP\_ 122
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 1 ) \} \\
+ c? = 100001 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 123\_ TCASE}\\
+ AddStock\_ SP\_ 123
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 100001 ) \} \\
+ c? = 100001 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 124\_ TCASE}\\
+ AddStock\_ SP\_ 124
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock = \{ ( pID1 \mapsto 100002 ) \} \\
+ c? = 100001 \\
+ products = \{ ( pID1 \mapsto pRODUCT2 ) , \\ ( pID3 \mapsto pRODUCT2 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 3\_ TCASE}\\
+ AddStock\_ SP\_ 3
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock =~\emptyset \\
+ c? =~\negate 4294967296 \\
+ products =~\emptyset
+\end{schema}
+
+
+\begin{schema}{AddStock\_ SP\_ 4\_ TCASE}\\
+ AddStock\_ SP\_ 4
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock =~\emptyset \\
+ c? =~\negate 4294967296 \\
+ products = \{ ( pID2 \mapsto pRODUCT1 ) \}
+\end{schema}
+
+
+\begin{schema}{AddStock\_ DNF\_ 3\_ TCASE}\\
+ AddStock\_ DNF\_ 3
+\where
+ sells =~\emptyset \\
+ pid? = pID1 \\
+ stock =~\emptyset \\
+ c? =~\negate 4294967296 \\
+ products =~\emptyset
+\end{schema}
+\end{multicols}
+
+Se pudieron generar casos de prueba sobre todas las hojas. Paso a analizar los casos donde aparece el valor $-4294967296$:
+
+\begin{itemize}
+    \item En los casos$AddStock\_SP\_19$, $AddStock\_SP\_41$, $AddStock\_SP\_52$, $AddStock\_SP\_63$, \\ $AddStock\_SP\_74$, $AddStock\_SP\_96$,$AddStock\_SP\_107$ y $AddStock\_SP\_118$ podemos ver que el producto con $pID1$ tiene asociado un stock de $-4294967296$ lo cuál es correcto debido a que tenemos la condición de que $stock~pid?$ debe ser negativo.
+    \item En los casos de $AddStock\_SP\_3$,  $AddStock\_SP\_4$ y $AddStock\_DNF\_3$ no hay problema con que la variable de entrada $c?$ tenga el valor $-4294967296$ ya que en el primer y segundo caso no existe una condición sobre dicha variable, y en el tercer caso $c?$ debe ser 0 o negativo, lo cuál se cumple.
+\end{itemize}
+
+\end{document}  

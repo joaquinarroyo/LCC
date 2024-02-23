@@ -1,0 +1,148 @@
+\begin{zed}
+[PID, PRODUCT]
+\also
+MSG ::= error | ok
+\end{zed}
+
+\begin{schema}{Store}
+stock : PID \pfun \nat \\
+products : PID \pfun PRODUCT \\
+sells : PID \pfun \seq \nat
+\end{schema}
+
+\begin{schema}{StoreInit}
+Store
+\where
+stock = \emptyset \\
+products = \emptyset \\
+sells = \emptyset
+\end{schema}
+
+\begin{schema}{ProductsStockInv}
+Store
+\where
+\dom~products = \dom~stock
+\end{schema}
+
+\begin{schema}{StockQuantityInv}
+Store
+\where
+\ran~stock \subseteq \nat
+\end{schema}
+
+\begin{schema}{ProductsSellsInv}
+Store
+\where
+\dom~products = \dom~sells
+\end{schema}
+
+\begin{schema}{AddNewProductOk}
+\Delta Store \\
+pid? : PID \\
+p? : PRODUCT \\
+m! : MSG \\
+\where
+pid? \notin \dom~products \\
+products' = products \cup \{pid? \mapsto p?\} \\
+stock' = stock \cup \{pid? \mapsto 0\} \\
+sells' = sells \cup \{pid? \mapsto \langle \rangle\} \\
+m! = ok 
+\end{schema}
+
+\begin{schema}{ExistingPidError}
+\Xi Store \\
+pid? : PID \\
+m! : MSG \\
+\where
+pid? \in \dom~products \\
+m! = error
+\end{schema}
+
+\begin{zed}
+AddNewProduct \defs AddNewProductOk \lor ExistingPidError
+\end{zed}
+
+\begin{schema}{AddStockOk}
+\Delta Store \\
+pid? : PID \\
+c? : \nat \\
+m! : MSG \\
+\where
+c? > 0 \\
+pid? \in \dom~products \\
+stock' = stock \oplus \{pid? \mapsto stock~pid? + c? \} \\
+products' = products \\
+sells' = sells \\
+m! = ok
+\end{schema}
+
+\begin{schema}{StockQuantityError}
+\Xi Store \\
+c? : \nat \\
+m! : MSG \\
+\where
+c? \leq 0 \\
+m! = error
+\end{schema}
+
+\begin{schema}{UnexistingPidError}
+\Xi Store \\
+pid? : PID \\
+m! : MSG \\
+\where
+pid? \notin \dom~products \\
+m! = error
+\end{schema}
+
+\begin{zed} 
+AddStock \defs AddStockOk \lor UnexistingPidError \lor StockQuantityError
+\end{zed}
+
+\begin{schema}{RemoveStockOk}
+\Delta Store \\
+pid? : PID \\
+c? : \nat \\
+m! : MSG \\
+\where
+c? > 0 \\
+pid? \in \dom~products \\
+stock~pid? - c?  \geq 0 \\
+stock' = stock \oplus \{pid? \mapsto stock~pid? - c?\} \\
+sells' = sells \\
+products' = products \\
+m! = ok
+\end{schema}
+
+\begin{schema}{NotEnoughStockError}
+\Xi Store \\
+pid? : PID \\
+c? : \nat \\
+m! : MSG \\
+\where
+pid? \in \dom~products \\
+stock(pid?) - c? < 0 \\
+m! = error
+\end{schema}
+
+\begin{zed}
+RemoveStock \defs RemoveStockOk \lor StockQuantityError \lor UnexistingPidError \lor NotEnoughStockError
+\end{zed}
+
+\begin{schema}{NewSellOk}
+\Delta Store \\
+pid? : PID \\
+c? : \nat \\
+m! : MSG \\
+\where
+c? > 0 \\
+pid? \in \dom~products \\
+stock~pid? - c?\geq 0 \\
+sells' = sells \oplus \{pid? \mapsto sells~pid? \cat \langle c? \rangle\} \\
+stock' = stock \oplus \{pid? \mapsto stock~pid? - c?\} \\
+products' = products \\
+m! = ok
+\end{schema}
+
+\begin{zed} 
+NewSell \defs NewSellOk \lor StockQuantityError \lor UnexistingPidError \lor NotEnoughStockError 
+\end{zed}
