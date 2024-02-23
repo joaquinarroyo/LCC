@@ -22,3 +22,4 @@ Contenido de materias de la carrera Licenciatura en Ciencias de la Computación 
   - Complementos de Matemática II (2023)
   - Ingeniería de Software II (2023)
   - Compiladores (2023)
+- 5to Año
