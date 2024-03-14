@@ -25,7 +25,8 @@ Contenido de materias de la carrera Licenciatura en Ciencias de la Computación 
 - 5to Año
   - Taller de Tesina (2024)
   - Práctica Profesional (2024)
+  - Seguridad Informática (2024)
+- Optativas
   - Verificación con F* (2024)
   - Bases de Datos Avanzadas (2024)
   - Simulación de Sistemas Dinámicos (2024)
-  - Seguridad Informática (2024)
