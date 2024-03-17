@@ -97,7 +97,8 @@ let rec fib' (x : nat) : i:nat{i >= x} =
    if x <= 1 then x else fib' (x - 1) + fib' (x - 2)
 
 (* Idem para la función factorial. *)
-let rec fac' (x : nat) : i:nat{x >= x} =
+let rec fac' (x : nat) : i:nat{i >= x} =
+   assume (x - 1 >= 0 && fac' (x - 1) >= x);
    if x = 0 then 1 else fac' (x - 1)
 
 (* Defina la siguiente función que suma una lista de enteros. *)
