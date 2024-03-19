@@ -40,9 +40,7 @@ let impar (x:int) : bool = x % 2 = 1
 let incr'''' (x:int{par x}) : y:int{impar y} = x + 1
 
 (* ¿Por qué falla la siguiente definición? Arreglarla. *)
-let muldiv (a: int) (b : pos) : y:int{y = a} = 
-   assume ((a / b) * b = a);
-   (a / b) * b
+let muldiv (a: int) (b : nonzero{a %b = 0}) : y:int{y = a} = (a / b) * b
 
 (* Defina una función de valor absoluto *)
 let abs (x : int) : nat = 
@@ -63,10 +61,12 @@ let max (x y : int) : max:int{(max = x || max = y) && max >= x && max >= y} =
    o alguna restricción apropiada. 
 *)
 let rec fib (x : nat) : nat =
-   if x <= 1 then x else fib (x - 1) + fib (x - 2)
+   if x <= 1 
+   then 1 
+   else fib (x - 1) + fib (x - 2)
 
 (* Defina un tipo 'digit' de naturales de un sólo dígito. *)
-type digit = i : int{i / 10 < 1 && i / 10 > -1}
+type digit = d : nat{d < 10}
 
 (* 
    Defina una función que compute el máximo de tres dígitos, usando
@@ -84,22 +84,28 @@ let max_digito (x y z : digit) : digit =
 
 (* Defina la función factorial. ¿Puede darle un mejor tipo? *)
 let rec fac (x : nat) : f:nat{f > 0} =
-   if x = 0 then 1 else fac (x - 1)
+   if x = 0 
+   then 1 
+   else fac (x - 1)
 
 (* Defina una función que sume los números naturales de 0 a 'n'. *)
 let rec triang (n:nat) : nat = 
-   if n = 0 then n else n + triang (n - 1)
+   if n = 0 
+   then n 
+   else n + triang (n - 1)
 
 (* Intente darle un tipo a fib que diga que el resultado es siempre
 mayor o igual al argumento. Si el chequeo falla, dé hipótesis de por qué. *)
 let rec fib' (x : nat) : i:nat{i >= x} =
-   assume (x - 1 >= 0 && fib' (x - 1) >= x);
-   if x <= 1 then x else fib' (x - 1) + fib' (x - 2)
+   if x <= 1 then 1
+   else if x = 2 then 2 
+   else fib' (x - 1) + fib' (x - 2)
 
 (* Idem para la función factorial. *)
-let rec fac' (x : nat) : i:nat{i >= x} =
-   assume (x - 1 >= 0 && fac' (x - 1) >= x);
-   if x = 0 then 1 else fac' (x - 1)
+let rec fac' (x : nat) : i:pos{i >= x} =
+   if x <= 0 
+   then 1 
+   else x * fac' (x - 1)
 
 (* Defina la siguiente función que suma una lista de enteros. *)
 val sum_int : list int -> int
