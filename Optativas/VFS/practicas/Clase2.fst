@@ -149,24 +149,26 @@ let distr_ooyy_2 (#a #b #c : Type)
   // (a + b) * (a + c)     ==>  a + (b * c)
 =
   function 
-  | (Inl x, Inl _) -> Inl x
   | (Inr y, Inr z) -> Inr (y, z)
-  | (Inl x, Inr _) -> admit() // ?
-  | (Inr y, Inl _) -> admit() // ?
+  | (Inl x, _) -> Inl x
+  | (_, Inl x) -> Inl x
 
 let modus_tollens (#a #b : Type)
   : (a -> b) -> (no b -> no a)
+  // (a -> b) -> ((b -> falso) -> (a -> falso))
+  //
   // a => b
   // no b
   // ======
   // no a
 =
-  admit()
-  // fun f -> ?
-  (* Vale la recíproca? *)
+  fun f g x -> g (f x)
+  (* Vale la recíproca? No *) 
 
 let modus_tollendo_ponens (#a #b : Type)
   : (oo a b) -> (no a -> b)
+  // (oo a b) -> ((a -> falso) -> b)
+  //
   // a \/ b
   // no a 
   // ======
@@ -174,9 +176,9 @@ let modus_tollendo_ponens (#a #b : Type)
 =
   fun or ->
   match or with
-  | Inl x -> admit() // ?
-  | Inr y -> fun x -> y
-  (* Vale la recíproca? *)
+  | Inl x -> ex_falso (na x)
+  | Inr y -> y
+  (* Vale la recíproca? No *) 
 
 let modus_ponendo_tollens (#a #b : Type)
   : no (yy a b) -> (a -> no b)
@@ -193,15 +195,26 @@ let modus_ponendo_tollens (#a #b : Type)
 para `yy` y `oo`. ¿Son todas intuicionistas? *)
 
 let demorgan1_ida (#a #b : Type) : oo (no a) (no b) -> no (yy a b) =
-  admit()
+  // oo (a -> falso) (b -> falso) -> ((yy a b) -> falso)
+  //
+  // (no a) \/ (no b) = no (a /\ b)
+  fun f (x, y) ->
+  match f with
+  | Inl g -> g x
+  | Inr h -> h y
 
 let demorgan1_vuelta (#a #b : Type) : no (yy a b) -> oo (no a) (no b) =
+  // no (a /\ b) = (no a) \/ (no b)
   admit()
 
 let demorgan2_ida (#a #b : Type) : yy (no a) (no b) -> no (oo a b) =
+  // yy ((a -> falso) (b -> falso)) -> ((oo a b) -> falso)
+  //
+  // (no a) /\ (no b) = no (a \/ b)
   admit()
 
 let demorgan2_vuelta (#a #b : Type) : no (oo a b) -> yy (no a) (no b) =
+  // no (a \/ b) = (no a) /\ (no b)
   admit()
 
 
