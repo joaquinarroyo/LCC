@@ -104,7 +104,7 @@ let rec ack (m n : nat) : nat =
   else ack (m-1) (ack m (n-1))
 
 (* Demostar que esta version con los argumentos al revés termina. *)
-let rec ack' (n m : nat) : Tot nat =
+let rec ack' (n m : nat) : Tot nat (decreases %[n, m]) =
   if m = 0 then n+1
   else if n = 0 then ack' 1 (m-1)
   else ack' (ack' (n-1) m) (m-1)
