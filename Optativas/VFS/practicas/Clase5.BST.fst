@@ -51,11 +51,18 @@ let rec insert_size (x:int) (t:bst)
   = match t with
     | L -> ()
     | N (l, y, r) ->
-      assume (x <= y);
-      assert (size (insert x t) == size (N (insert x l, y, r)));
-      assert (size (insert x t) == 1 + size (insert x l) + size r);
-      insert_size x l;
-      ()
+      match x <= y with
+      | true -> 
+        // assert (size (insert x t) == size (N (insert x l, y, r)));
+        // assert (size (insert x t) == 1 + size (insert x l) + size r);
+        insert_size x l;
+        ()
+      | false -> 
+        // assert (size (insert x t) == size (N (l, y, insert x r)));
+        // assert (size (insert x t) == 1 + size l + size (insert x r));
+        insert_size x r;
+        ()
+      
 
 let rec insert_height (x:int) (t:bst)
   : Lemma (height (insert x t) <= 1 + height t)
@@ -63,8 +70,6 @@ let rec insert_height (x:int) (t:bst)
   | L -> ()
   | N (l, y, r) ->
     assume (x <= y);
-    assert (height (insert x t) == height (N (insert x l, y, r)));
-    assert (height (insert x t) == 1 + max (height (insert x l)) (height r));
     insert_height x l;
     ()
 
@@ -73,9 +78,7 @@ let rec insert_mem (x:int) (t:bst)
   = match t with
   | L -> ()
   | N (l, y, r) ->
-    assume (x < y);
-    // assert (member x (insert x t) = member x (N (insert x l, y, r)));
-    // assert (member x (insert x t) = member x (insert x l));
+    assume (x <= y);
     insert_mem x l;
     ()
 
@@ -109,8 +112,21 @@ let rec delete (x: int) (t: bst) : bst =
 (* Un poco más difícil. Require un lema auxiliar sobre extract_min:
 declárelo y demuéstrelo. Si le parece conveniente, puede modificar
 las definiciones de delete, delete_root y extract_min. *)
-let delete_size (x:int) (t:bst) : Lemma (delete x t == t \/ size (delete x t) == size t - 1) =
-  admit()
+let rec delete_size (x:int) (t:bst) : Lemma (delete x t == t \/ size (delete x t) == size t - 1) =
+  match t with
+  | L -> ()
+  | N (l, y, r) -> 
+    match member x t with
+    | false ->
+      delete_size x l;
+      delete_size x r;
+      ()
+    | true ->
+      assume (x < y);
+      assert (size (delete x (N (l, y, r))) == size (N (delete x l, y, r)));
+      assert (size (N (delete x l, y, r)) == 1 + size (delete x l) + size r);
+      delete_size x l;
+      ()
 
 (* Versión más fuerte del lema anterior. *)
 let delete_size_mem (x:int) (t:bst)
@@ -118,8 +134,21 @@ let delete_size_mem (x:int) (t:bst)
         (ensures size (delete x t) == size t - 1)
 = admit()
 
-let to_list_length (t:bst) : Lemma (length (to_list t) == size t) =
-  admit()
+let rec to_list_length (t:bst) : Lemma (length (to_list t) == size t) =
+  (*
+  t = (l, x, r)
+
+  len (to_list l @ [x] @ to_list r) = 1 + size l + size r
+  len (to_list l) + len [x] + len (to_list r) = 1 + size l + size r
+  1 + len (to_list l) + len (to_list r) = 1 + size l + size r  (H.I)
+  *)
+  match t with
+  | L -> ()
+  | N (l, x, r) ->
+    assert (length (to_list l @ [x] @ to_list r) = length (to_list l) + length [x] + length (to_list r));
+    to_list_length l;
+    to_list_length r;
+    ()
 
 (* Contestar en texto (sin intentar formalizar):
     ¿Es cierto que `member x (insert y (insert x t))`? ¿Cómo se puede probar?
