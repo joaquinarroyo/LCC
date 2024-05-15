@@ -1,0 +1,23 @@
+Root-Coordinator
+ {
+  Simulator
+   {
+    Path = curso/fuente.h
+    Parameters = 0.000000e+00,1.000000e+00,1.000000e+00
+   }
+  Simulator
+   {
+    Path = sinks/gnuplot.h
+    Parameters = 1.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with impulses title ':D'","","","",""
+   }
+  EIC
+   {
+   }
+  EOC
+   {
+   }
+  IC
+   {
+    (0,0);(1,0)
+   }
+ }

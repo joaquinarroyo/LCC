@@ -1,0 +1,95 @@
+Root-Coordinator
+ {
+  Simulator
+   {
+    Path = curso/fuente.h
+    Parameters = 0.000000e+00,1.000000e+00,1.000000e+00
+   }
+  Simulator
+   {
+    Path = sinks/gnuplot.h
+    Parameters = 3.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with impulses title 'jobs'","with impulses title 'procesor'","with steps title 'sensor'","",""
+   }
+  Simulator
+   {
+    Path = curso/procesador.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = curso/extcola.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = curso/sensor.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = curso/filter.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = sources/constant_sci.h
+    Parameters = "0.5"
+   }
+  Simulator
+   {
+    Path = curso/muestreador.h
+    Parameters = 1.000000e+00
+   }
+  Simulator
+   {
+    Path = curso/controlador.h
+    Parameters = 2.000000e+01,2.000000e-02,1.000000e-03
+   }
+  Simulator
+   {
+    Path = sinks/gnuplot.h
+    Parameters = 1.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with steps title 'filter probability'","","","",""
+   }
+  Simulator
+   {
+    Path = sinks/gnuplot.h
+    Parameters = 2.000000e+00,"set xrange [0:%tf] @ set grid @ set title 'Plot'","with impulses title 'discarded_jobs'","with impulses title 'procesor2'","","",""
+   }
+  Simulator
+   {
+    Path = curso/procesador.h
+    Parameters = 
+   }
+  Simulator
+   {
+    Path = curso/extcola.h
+    Parameters = 
+   }
+  EIC
+   {
+   }
+  EOC
+   {
+   }
+  IC
+   {
+    (0,0);(1,0)
+    (3,0);(2,0)
+    (2,0);(3,1)
+    (2,0);(1,1)
+    (3,0);(4,1)
+    (0,0);(5,0)
+    (5,0);(3,0)
+    (5,0);(4,0)
+    (4,0);(7,0)
+    (7,0);(1,2)
+    (8,0);(5,1)
+    (4,0);(8,0)
+    (8,0);(9,0)
+    (12,0);(11,0)
+    (11,0);(12,1)
+    (5,1);(12,0)
+    (5,1);(10,0)
+    (11,0);(10,1)
+   }
+ }

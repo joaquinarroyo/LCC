@@ -1,0 +1,143 @@
+\subsection{Documental}
+
+\begin{frame}
+    \frametitle{Documental}
+
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            Las bases de datos documentales almacenan datos en documentos individuales, que pueden ser estructurados o semi-estructurados como archivos JSON o XML.
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.5\textwidth]{images/Documental.png}
+        \end{column}
+    \end{columns}
+    
+     
+
+    \vspace{0.3cm}
+    
+    Son especialmente adecuadas para aplicaciones donde los datos tienen una estructura flexible y variable como por ejemplo:
+
+     
+    
+    \begin{itemize}
+        \item \textbf{Contenido web}  
+        \item \textbf{Análisis de registros}  
+        \item \textbf{Gestión de datos de productos}
+        \item etc.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Documental - Ejemplos}
+
+    Algunos ejemplos de bases de datos documentales son:
+    
+    \begin{itemize}
+        \item \textbf{MongoDB}
+
+        \item \textbf{CouchDB}
+    \end{itemize}
+
+     
+    
+    Nos vamos a centrar en MongoDB.
+\end{frame}
+
+\subsubsection{MongoDB}
+
+\begin{frame}
+    \frametitle{Documental - MongoDB}
+
+        \centering
+    \includegraphics[width=0.4\textwidth]{images/mongodb-logo.png}
+    \begin{itemize}
+        \item Base de datos de código abierto, orientada a documentos y altamente escalable.  
+        \item Desarrollada por MongoDB Inc.  
+        \item Modelo de datos flexible basado en documentos BSON.  
+        \item Utiliza almacenamiento basado en archivos de mapeo directo o motor WiredTiger.  
+        \item Maneja replicación a través de conjuntos de réplicas para alta disponibilidad.  
+        \item Distribuye datos en clústeres de servidores llamados fragmentos.  
+        \item Lenguaje de consulta poderoso y flexible.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Operaciones comunes en MongoDB}
+\begin{itemize}
+    \item \textbf{Insertar un documento}
+    \begin{verbatim}
+db.users.insertOne({
+    name: "John Doe",
+    age: 30,
+    email: "john@example.com"
+})
+
+db.users.insertMany([
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 50 }
+])
+    \end{verbatim}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Operaciones comunes en MongoDB}
+\begin{itemize}
+    \item \textbf{Consultar documentos}
+    \begin{verbatim}
+db.users.find({ age: { $gt: 25 } })
+    \end{verbatim}
+
+     
+    \item \textbf{Actualizar documentos}
+    \begin{verbatim}
+db.users.updateOne(
+    { name: "John Doe" },
+    { $set: { age: 35 } }
+)
+
+db.users.updateMany(
+    { status: "active" }, 
+    { $set: { status: "inactive" } }
+)
+
+    \end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Operaciones comunes en MongoDB}
+\begin{itemize} 
+    \item \textbf{Eliminar documentos}
+    \begin{verbatim}
+db.users.deleteOne({ name: "John Doe" })
+db.users.deleteMany({ age: { $gt: 40 } })
+    \end{verbatim}
+         
+    \item \textbf{Contar documentos}
+\begin{verbatim}
+db.users.countDocuments({ age: { $lt: 30 } })
+\end{verbatim}
+         
+    \item \textbf{Valores Distintos}
+\begin{verbatim}
+db.users.distinct("city", { country: "USA" })
+\end{verbatim}
+         
+    \item \textbf{Agregar datos}
+\begin{verbatim}
+db.sales.aggregate([
+  { $match: { status: "completed" } },
+  { $group: { _id: "$product", 
+            totalAmount: { $sum: "$amount" } } }
+])
+\end{verbatim}
+
+\end{itemize}
+
+\end{frame}

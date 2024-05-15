@@ -1,0 +1,134 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\usetheme{Boadilla}
+
+\newtheorem{Teorema}{Teorema}
+
+\definecolor{myblue}{RGB}{80, 69, 190} 
+
+\setlength{\parskip}{0.1cm}
+
+\newcommand{\indc}[4]{
+    \begin{frame}
+        \frametitle{Índice}
+        	\begin{enumerate}
+            \setbeamercovered{transparent}
+            \item<#1> Clave-Valor  
+            \item<#2> Columnar      
+            \item<#3> Documental    
+            \item<#4> Grafo
+        \end{enumerate}
+    \end{frame}
+}
+
+\newcommand{\mytitle}[4]{
+    \centering
+    \vspace{0.1cm}
+    
+    {\Large \color{myblue} #1}
+
+    \vspace{0.1cm}
+
+    {\Large \color{myblue} #2}
+    
+    \vspace{0.5cm}
+    
+    {#3}
+    
+    \vspace{0.5cm}
+    
+    {\color{gray} #4}
+    
+    \vspace{0.5cm}
+    
+    {\today}
+}
+
+\title{Bases de datos NoSQL}
+\author{Arroyo Joaquin \\ Belmonte Marina}
+
+\begin{document}
+
+\begin{frame}
+    \mytitle
+    {Bases de datos NoSQL}
+    {Clase 1}
+    {Arroyo Joaquin \\ Belmonte Marina}
+    {Universidad Nacional de Rosario \\ Licenciatura en Ciencias de la Computación \\ Bases de Datos Avanzadas}
+\end{frame}
+
+\section{Introduccion}
+
+\include{resumen}
+
+\section{Caracterización}
+
+\include{caracterizacion}
+
+\section{¿Por qué NoSQL?}
+
+\include{porque-nosql}
+
+\section{SQL vs NoSQL}
+
+\include{sql-vs-nosql}
+
+\section{Sistemas Distribuidos}
+
+\include{sist-distribuidos}
+
+\section{Modelos de datos NoSQL}
+
+\include{modelos-nosql/clasificacion}
+
+\subsection{Clave-Valor}
+
+\indc{1}{0}{0}{0}
+
+\include{modelos-nosql/clave-valor}
+
+\indc{0}{1}{0}{0}
+
+\subsection{Columnar}
+
+\include{modelos-nosql/columnar}
+
+\indc{0}{0}{1}{0}
+
+\subsection{Documental}
+
+\include{modelos-nosql/documental}
+
+\indc{0}{0}{0}{1}
+
+\subsection{Grafo}
+
+\include{modelos-nosql/grafo}
+
+\begin{frame}
+    \frametitle{}
+    \begin{center}
+    	¿Dudas?
+    \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Referencias}
+    \begin{itemize}
+    	\item N. Reyes, O. E. Gagliardi, C. Deco, and M. T. Taranilla. \textit{Bases de Datos, Maestría en Tecnología de la Información}. 2018.
+    
+        \item C. M. Bender, C. Deco, J. S. González, M. Hallo, and J. C. Ponce Gallegos. \textit{Tópicos Avanzados de Bases de Datos}. 2014.
+
+        \item E. Gómez and L. Mota. \textit{Introducción a las bases de datos NoSQL. Sistemas de bases de datos orientados a grafos}. 2021.
+    \end{itemize}
+\end{frame}
+
+\end{document}

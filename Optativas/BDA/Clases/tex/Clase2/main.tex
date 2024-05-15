@@ -1,0 +1,159 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\usetheme{Boadilla}
+
+\newtheorem{Teorema}{Teorema}
+
+\definecolor{myblue}{RGB}{80, 69, 190} 
+
+\setlength{\parskip}{0.1cm}
+
+\newcommand{\indc}[4]{
+    \begin{frame}
+        \frametitle{Índice - Modelos NoSQL}
+        	\begin{enumerate}
+            \setbeamercovered{transparent}
+            \item<#1> Clave-Valor  
+            \item<#2> Columnar      
+            \item<#3> Documental    
+            \item<#4> Grafo
+        \end{enumerate}
+    \end{frame}
+}
+
+\newcommand{\estindc}[2]{
+    \begin{frame}
+        \frametitle{Índice - Articulos}
+        	\begin{enumerate}
+            \setbeamercovered{transparent}
+            \item<#1> Assessment of SQL and NoSQL Systems to Store and Mine COVID-19 Data. 
+            \item<#2> Performance investigation of selected SQL and NoSQL databases.
+        \end{enumerate}
+    \end{frame}
+}
+
+\newcommand{\myref}[2]{
+    {\color{blue}\href{#1}{#2}}
+}
+
+\newcommand{\mytitle}[4]{
+    \centering
+    \vspace{0.1cm}
+    
+    {\Large \color{myblue} #1}
+
+    \vspace{0.1cm}
+
+    {\Large \color{myblue} #2}
+    
+    \vspace{0.5cm}
+    
+    {#3}
+    
+    \vspace{0.5cm}
+    
+    {\color{gray} #4}
+    
+    \vspace{0.5cm}
+    
+    {\today}
+}
+
+\title{Bases de datos NoSQL}
+\author{Arroyo Joaquin \\ Belmonte Marina}
+
+\begin{document}
+
+\begin{frame}
+    \mytitle
+    {Bases de datos NoSQL}
+    {Clase 2}
+    {Arroyo Joaquin \\ Belmonte Marina}
+    {Universidad Nacional de Rosario \\ Licenciatura en Ciencias de la Computación \\ Bases de Datos Avanzadas}
+\end{frame}
+
+\section{Resumen}
+\include{resumen}
+
+\section{Repaso}
+\begin{frame}
+    \frametitle{Repaso}
+    Como vimos en la clase 1, existe una amplia variedad de modelos de datos \textit{NoSQL}. Entre los más conocidos encontramos: 
+    
+     
+    
+    \begin{enumerate}
+        \item Clave-Valor    
+        \item Columnar        
+        \item Documental     
+        \item Grafo
+    \end{enumerate}
+\end{frame}
+
+\section{Implementaciones}
+
+\indc{1}{0}{0}{0}
+
+\include{modelos-nosql/clave-valor}
+
+\indc{0}{1}{0}{0}
+
+\include{modelos-nosql/columnar}
+
+\indc{0}{0}{1}{0}
+
+\include{modelos-nosql/documental}
+
+\indc{0}{0}{0}{1}
+
+\include{modelos-nosql/grafo}
+
+\section{Estudios}
+
+\estindc{1}{0}
+
+\include{estudios/covid}
+
+\estindc{0}{1}
+
+\include{estudios/geo}
+
+\section{Dudas}
+
+\begin{frame}
+    \vspace{1cm}
+    
+    \centering
+    Dudas?
+\end{frame}
+
+\section{Referencias}
+\begin{frame}
+\frametitle{Referencias}
+    \begin{itemize}
+    	\item[1] \myref{https://redis.io/es/}{redis.io} Accedido el 15.04.2024
+
+        \item[2] \myref{https://hbase.apache.org/}{hbase.apache.org} Accedido el 13.05.2024
+
+        \item[3] \myref{https://www.mongodb.com/es}{mongodb.com} Accedido el 13.05.2024
+        
+        \item[4] \myref{https://neo4j.com/}{neo4j.com} Accedido el 06.05.2024
+        
+        \item[5] Antas, J., Silva, R.R., Bernardino, J.: Assessment of sql and nosql systems to store and mine covid-19 data. MDP Comput. Suv. (2022)
+
+        \item[6] Schmid, S., Galicz, E., Reinhardt, W.: Performance investigation of selected sql and nosql databases (2015)
+
+        \item[7] \myref{https://datatracker.ietf.org/doc/html/rfc7946}{datatracker.ietf.org/doc} Accedido el 10.05.2024
+        
+    \end{itemize}
+\end{frame}
+
+\end{document}
