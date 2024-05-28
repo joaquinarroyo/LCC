@@ -51,18 +51,9 @@ let rec insert_size (x:int) (t:bst)
   = match t with
     | L -> ()
     | N (l, y, r) ->
-      match x <= y with
-      | true -> 
-        // assert (size (insert x t) == size (N (insert x l, y, r)));
-        // assert (size (insert x t) == 1 + size (insert x l) + size r);
-        insert_size x l;
-        ()
-      | false -> 
-        // assert (size (insert x t) == size (N (l, y, insert x r)));
-        // assert (size (insert x t) == 1 + size l + size (insert x r));
-        insert_size x r;
-        ()
-      
+      if x <= y
+      then insert_size x l 
+      else insert_size x r
 
 let rec insert_height (x:int) (t:bst)
   : Lemma (height (insert x t) <= 1 + height t)
@@ -78,13 +69,19 @@ let rec insert_mem (x:int) (t:bst)
   = match t with
   | L -> ()
   | N (l, y, r) ->
-    assume (x <= y);
-    insert_mem x l;
-    ()
+    if x <= y
+    then insert_mem x l
+    else insert_mem x r
 
 (* ¿Puede demostrar también que:
      height t <= height (insert x t)
    ? ¿Cuál es la forma "más fácil" de hacerlo? *)
+let rec insert_height' (x:int) (t:bst) : Lemma (height t <= height (insert x t)) =
+  match t with
+  | L -> ()
+  | N (l, y, r) ->
+    if x <= y then insert_height' x l
+    else insert_height' x r
 
 let rec extract_min (t: bst) : option (int & bst) =
   match t with
@@ -109,30 +106,49 @@ let rec delete (x: int) (t: bst) : bst =
     else if x > y then N (l, y, delete x r)
     else delete_root t
 
+// Revisar
+let rec extract_min_result (t:bst) : Lemma (extract_min t = None <==> t = L) =
+  match t with
+  | L -> ()
+  | N (L, _, _) -> ()
+  | N (l, _, r) ->
+    match extract_min l with
+    | None -> extract_min_result l
+    | Some (_, l') -> ()
+
+let rec extract_min_size (t:bst) : Lemma (requires N? t) (ensures Some? (extract_min t) && size (snd (Some?.v (extract_min t))) = size t - 1) =
+  let N (l, _, r) = t in
+  match extract_min l with
+  | None -> extract_min_result l
+  | Some (_, l') -> extract_min_size l
+
+let delete_root_size (t:bst) : Lemma (requires N? t) (ensures size (delete_root t) = size t - 1) =
+  let N (l, _, r) = t in
+  match extract_min r with
+  | None -> extract_min_result r
+  | Some (_, r') -> extract_min_size r
+
 (* Un poco más difícil. Require un lema auxiliar sobre extract_min:
 declárelo y demuéstrelo. Si le parece conveniente, puede modificar
 las definiciones de delete, delete_root y extract_min. *)
 let rec delete_size (x:int) (t:bst) : Lemma (delete x t == t \/ size (delete x t) == size t - 1) =
   match t with
   | L -> ()
-  | N (l, y, r) -> 
-    match member x t with
-    | false ->
-      delete_size x l;
-      delete_size x r;
-      ()
-    | true ->
-      assume (x < y);
-      assert (size (delete x (N (l, y, r))) == size (N (delete x l, y, r)));
-      assert (size (N (delete x l, y, r)) == 1 + size (delete x l) + size r);
-      delete_size x l;
-      ()
+  | N (l, y, r) ->
+    if x < y then delete_size x l
+    else if x > y then delete_size x r
+    else delete_root_size t
 
 (* Versión más fuerte del lema anterior. *)
-let delete_size_mem (x:int) (t:bst)
+let rec delete_size_mem (x:int) (t:bst)
 : Lemma (requires member x t)
-        (ensures size (delete x t) == size t - 1)
-= admit()
+        (ensures size (delete x t) == size t - 1) =
+  let N (l, y, r) = t in
+    if x < y 
+      then delete_size_mem x l
+      else if x > y
+       then delete_size_mem x r
+       else delete_root_size t
 
 let rec to_list_length (t:bst) : Lemma (length (to_list t) == size t) =
   (*

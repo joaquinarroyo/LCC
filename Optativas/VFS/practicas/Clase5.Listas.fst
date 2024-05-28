@@ -74,6 +74,14 @@ let rec rev_append_int (l1 l2 : list int)
     snoc_append (rev_int l2) (rev_int xs) x;
     ()
 
+//
+let rec snoc_rev (xs : list int) (x : int)
+  : Lemma (rev_int (snoc xs x) == x :: rev_int xs)
+  = match xs with
+  | [] -> ()
+  | y::ys ->
+    snoc_rev ys x
+
 // Doble reverse es identidad
 let rec rev_rev (l : list int)
   : Lemma (rev_int (rev_int l) == l)
@@ -96,14 +104,10 @@ let rec rev_rev (l : list int)
 = match l with
   | [] -> ()
   | x::xs ->
-    assume (rev (rev l) = rev (rev xs @ [x]));
-    assume (rev (rev xs @ [x]) = rev [x] @ rev (rev xs));
-    assume (rev [x] = [x]);
     rev_rev xs;
-    admit();
-    ()
+    snoc_rev (rev_int xs) x
 
-let rec rev_injective (l1 l2 : list int)
+let rev_injective (l1 l2 : list int)
   : Lemma (requires rev_int l1 == rev_int l2) (ensures l1 == l2)
   (*
   l1 = x:xs
@@ -114,12 +118,7 @@ let rec rev_injective (l1 l2 : list int)
   => sx @ [x] = sx @ [y] => (assume sx = sy)
   => [x] = [y] =>
   *)
-= match l1 with
-  | [] -> ()
-  | x::xs -> 
-    match l2 with
-    | [] -> ()
-    | y::ys ->
-      assert (rev (x::xs) = rev (y::ys));
-      ()
+= 
+  rev_rev l1;
+  rev_rev l2
 

@@ -48,16 +48,14 @@ and gg (x:nat) : Tot nat (decreases %[x; 1]) =
  
 // -5 -> 4 -> -3 -> 2 -> -1 -> 0
 // Elija una métrica para demostrar la terminación
-let rec flip (x:int) : Tot int =
-  admit(); // borrar
+let rec flip (x:int) : Tot int (decreases abs x) =
   if x = 0 then 0
   else if x > 0 then flip (-x + 1)
   else (* x < 0 *) flip (-x - 1)
 
 // -5 -> 4 -> -4 -> 3 -> -3 -> 2 -> -2 -> 1 -> -1 -> 0
 // Elija una métrica para demostrar la terminación (un poco más dificil)
-let rec flip2 (x:int) : Tot int =
-  admit(); // borrar
+let rec flip2 (x:int) : Tot int (decreases %[abs x; b2nat (x > 0)]) =
   if x = 0 then 0
   else if x > 0 then flip2 (-x)
   else (* x < 0 *) flip2 (-x - 1)
@@ -92,6 +90,7 @@ let rec last #a (xs : list a{Cons? xs}) : a =
 [@@expect_failure]
 let rec sum' (xs:list int) : Tot int =
   (* Por qué *no* se acepta esta función? Termina? *)
+  // 
   if Nil? xs
   then 0
   else last xs + sum' (init xs)
@@ -104,7 +103,7 @@ let rec ack (m n : nat) : nat =
   else ack (m-1) (ack m (n-1))
 
 (* Demostar que esta version con los argumentos al revés termina. *)
-let rec ack' (n m : nat) : Tot nat (decreases %[n, m]) =
+let rec ack' (n m : nat) : Tot nat (decreases %[m; n]) =
   if m = 0 then n+1
   else if n = 0 then ack' 1 (m-1)
   else ack' (ack' (n-1) m) (m-1)

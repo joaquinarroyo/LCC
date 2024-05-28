@@ -21,10 +21,7 @@ let rec vidx (#a:Type) (#n:pos) (xs : vec a n) (i : nat{i < n}) : a =
 let rec vappend (#a:Type) (#n1 #n2 : nat) (xs : vec a n1) (ys : vec a n2) : vec a (n1 + n2) =
   match xs with
   | VNil -> ys
-  | VCons xhd xtl ->
-    match ys with
-    | VNil -> xs
-    | VCons yhd ytl -> VCons xhd (vappend xtl ys)
+  | VCons hd tl -> VCons hd (vappend tl ys)
 
 (* update :: forall a. vec a -> nat -> a -> vec a *)
 let rec vupd (#a:Type) (#n:pos) (xs : vec a n) (i : nat{i < n}) (x : a) : vec a n =
