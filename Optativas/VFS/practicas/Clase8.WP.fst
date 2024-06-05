@@ -266,7 +266,7 @@ let move_x_y_ok :
 
 (* Metateoría de WPs *)
 
-let monotonia (p:stmt) (q1 q2 : cond)
+let rec monotonia (p:stmt) (q1 q2 : cond)
   : Lemma (requires forall s. q1 s ==> q2 s)
           (ensures forall s. cwp p q1 s ==> cwp p q2 s)
   = admit()

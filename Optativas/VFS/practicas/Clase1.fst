@@ -120,5 +120,4 @@ val rev_int : list int -> list int
 let rec rev_int xs = 
    match xs with
    | [] -> []
-   | [x] -> [x]
    | x::xs -> rev_int xs @ [x]
