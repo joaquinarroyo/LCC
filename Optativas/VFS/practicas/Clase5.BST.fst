@@ -106,7 +106,6 @@ let rec delete (x: int) (t: bst) : bst =
     else if x > y then N (l, y, delete x r)
     else delete_root t
 
-// Revisar
 let rec extract_min_result (t:bst) : Lemma (extract_min t = None <==> t = L) =
   match t with
   | L -> ()
