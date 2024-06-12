@@ -1,0 +1,263 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{23}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Gómez and Mota}{2021}]{grafo2021}
+\begin{bbook}
+\bauthor{\bsnm{Gómez}, \binits{E.}},
+\bauthor{\bsnm{Mota}, \binits{L.}}:
+\bbtitle{Introducción a las Bases de Datos NoSQL. Sistemas de Bases de Datos Orientados a Grafos},
+(\byear{2021})
+\end{bbook}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Berners-Lee et~al.}{2001}]{tbl}
+\begin{botherref}
+\oauthor{\bsnm{Berners-Lee}, \binits{T.}},
+\oauthor{\bsnm{Hendler}, \binits{J.}},
+\oauthor{\bsnm{Lassila}, \binits{O.}}:
+The semantic web: A new form of web content that is meaningful to computers will unleash a revolution of new possibilities.
+ScientificAmerican.com
+(2001)
+\end{botherref}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Cattell}{2011}]{scsql}
+\begin{botherref}
+\oauthor{\bsnm{Cattell}, \binits{R.}}:
+Scalable sql and nosql data stores.
+ACM SIGMOD Record
+(2011)
+\end{botherref}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Elmasri and Navathe}{2017}]{fund}
+\begin{bbook}
+\bauthor{\bsnm{Elmasri}, \binits{R.}},
+\bauthor{\bsnm{Navathe}, \binits{S.B.}}:
+\bbtitle{Fundamentals Of Database Systems},
+(\byear{2017})
+\end{bbook}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Angles and Gutierrez}{2008}]{surv}
+\begin{botherref}
+\oauthor{\bsnm{Angles}, \binits{R.}},
+\oauthor{\bsnm{Gutierrez}, \binits{C.}}:
+Survey of graph database models.
+ACM Comput. Surv.
+(2008)
+\end{botherref}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Atzeni et~al.}{2016}]{Atzeni2016DataMI}
+\begin{botherref}
+\oauthor{\bsnm{Atzeni}, \binits{P.}},
+\oauthor{\bsnm{Bugiotti}, \binits{F.}},
+\oauthor{\bsnm{Cabibbo}, \binits{L.}},
+\oauthor{\bsnm{Torlone}, \binits{R.}}:
+Data modeling in the nosql world.
+Comput. Stand. Interfaces
+\textbf{67}
+(2016)
+\end{botherref}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{}{}]{redis}
+\begin{botherref}
+Redis. href{https://redis.io/docs/latest/}{redis.io/docs}. (Accedido el 15.03.2024)
+\end{botherref}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{}{}]{hbase}
+\begin{botherref}
+HBase. \href{https://hbase.apache.org/}{hbase.apache.org}. (Accedido el 13.05.2024)
+\end{botherref}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{}{}]{mongodb}
+\begin{botherref}
+MongoDB. \href{https://www.mongodb.com/}{mongodb.com}. (Accedido el 13.05.2024)
+\end{botherref}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{}{}]{neo4j}
+\begin{botherref}
+Neo4j. \href{https://neo4j.com/}{neo4j.com}. (Accedido el 10.05.2024)
+\end{botherref}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Antas et~al.}{2022}]{cov-19}
+\begin{botherref}
+\oauthor{\bsnm{Antas}, \binits{J.}},
+\oauthor{\bsnm{Silva}, \binits{R.R.}},
+\oauthor{\bsnm{Bernardino}, \binits{J.}}:
+Assessment of sql and nosql systems to store and mine covid-19 data.
+MDP Comput. Suv.
+(2022)
+\end{botherref}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Schmid et~al.}{2015}]{geo2015}
+\begin{botherref}
+\oauthor{\bsnm{Schmid}, \binits{S.}},
+\oauthor{\bsnm{Galicz}, \binits{E.}},
+\oauthor{\bsnm{Reinhardt}, \binits{W.}}:
+Performance investigation of selected sql and nosql databases
+(2015)
+\end{botherref}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{}{}]{geojson}
+\begin{botherref}
+GeoJSON. \href{https://datatracker.ietf.org/doc/html/rfc7946}{datatracker.ietf.org/doc/html/rfc7946}. Accedido el 08.01.2015
+\end{botherref}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{}{}]{mongodb2dsphere}
+\begin{botherref}
+MongoDB, Inc.: Geospatial Indexes and Queries. \href{http://docs.mongodb.org/manual/applications/geospatial-indexes/}{docs.mongodb.org/manual/applications/geospatial-indexes}. (Accedido el 27.08.2014)
+\end{botherref}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{}{}]{couchbase}
+\begin{botherref}
+Ostrovsky, D., Rodenski, Y.: Pro Couchbase Server. Apress. (2014)
+\end{botherref}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{}{}]{post-gis}
+\begin{botherref}
+PostGIS Development Group. Postgis Manual. \href{http://postgis.net/docs/index.html}{postgis.net/docs/index.html}. (Accedido el 14.01.2014)
+\end{botherref}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Arjunan}{2024}]{fraud_detection}
+\begin{botherref}
+\oauthor{\bsnm{Arjunan}, \binits{T.}}:
+Fraud detection in nosql database systems using advanced machine learning.
+International Journal of Innovative Science and Research Technology
+\textbf{9}
+(2024)
+\doiurl{10.38124/ijisrt/IJISRT24MAR127}
+\end{botherref}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Hřivnáč and Peloton}{2024}]{multidb}
+\begin{botherref}
+\oauthor{\bsnm{Hřivnáč}, \binits{J.}},
+\oauthor{\bsnm{Peloton}, \binits{J.}}:
+Multidatabase the future of the data storage in particle physics and astronomy.
+EPJ Web of Conferences
+\textbf{295}
+(2024)
+\doiurl{10.1051/epjconf/202429501039}
+\end{botherref}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{}{2009}]{lsstsciencecollaboration2009lsst}
+\begin{botherref}
+LSST Science Book, Version 2.0
+(2009)
+\end{botherref}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{}{}]{fink}
+\begin{botherref}
+Fink Project, \href{https://fink-broker.org/}{fink-broker.org}. (Accedido el)
+\end{botherref}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{}{}]{zwicky}
+\begin{botherref}
+Zwicky transient facility (ztf), \href{https://www.ztf.caltech.edu}{ztf.caltech.edu}. (Accedido el)
+\end{botherref}
+\endbibitem
+
+%%% 22
+\bibitem[\protect\citeauthoryear{}{}]{janusgraph}
+\begin{botherref}
+Janusgraph, \href{https://janusgraph.org}{janusgraph.org}. (Accedido el)
+\end{botherref}
+\endbibitem
+
+%%% 23
+\bibitem[\protect\citeauthoryear{Möller et~al.}{2020}]{10.1093/mnras/staa3602}
+\begin{barticle}
+\bauthor{\bsnm{Möller}, \binits{A.}},
+\bauthor{\bsnm{Peloton}, \binits{J.}},
+\bauthor{\bsnm{Ishida}, \binits{E.E.O.}},
+\bauthor{\bsnm{Arnault}, \binits{C.}},
+\bauthor{\bsnm{Bachelet}, \binits{e.a.}}:
+\batitle{{fink, a new generation of broker for the LSST community}}.
+\bjtitle{Monthly Notices of the Royal Astronomical Society}
+\bvolume{501}(\bissue{3}),
+\bfpage{3272}--\blpage{3288}
+(\byear{2020})
+\doiurl{10.1093/mnras/staa3602}
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}

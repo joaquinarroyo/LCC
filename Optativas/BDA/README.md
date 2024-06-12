@@ -1,7 +1,6 @@
 # Bases de Datos Avanzadas _2024_
 Contenido:
-- Libros
-- Papers
+
 - Monografía
   - Archivos .tex
   - PDF

@@ -1,0 +1,119 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\usetheme{Boadilla}
+
+\newtheorem{Teorema}{Teorema}
+
+\definecolor{myblue}{RGB}{80, 69, 190} 
+
+\setlength{\parskip}{0.1cm}
+
+\newcommand{\myref}[2]{
+    {\color{blue}\href{#1}{#2}}
+}
+
+\newcommand{\mytitle}[4]{
+    \centering
+    \vspace{0.1cm}
+    
+    {\Large \color{myblue} #1}
+
+    \vspace{0.1cm}
+
+    {\Large \color{myblue} #2}
+    
+    \vspace{0.5cm}
+    
+    {#3}
+    
+    \vspace{0.5cm}
+    
+    {\color{gray} #4}
+    
+    \vspace{0.5cm}
+    
+    {\today}
+}
+
+\newcommand{\estindc}[2]{
+    \begin{frame}
+        \frametitle{Índice}
+        	\begin{enumerate}
+            \setbeamercovered{transparent}
+            \item <#1> The Future of the data storage in Particle Physics and Astronomy
+            \item<#2> Fraud Detection in NoSQL Database Systems using Advanced Machine Learning
+        \end{enumerate}
+    \end{frame}
+}
+
+\title{Bases de datos NoSQL}
+\author{Arroyo Joaquin \\ Belmonte Marina}
+
+\begin{document}
+
+\begin{frame}
+    \mytitle
+    {Bases de datos NoSQL}
+    {Clase 3}
+    {Arroyo Joaquin \\ Belmonte Marina}
+    {Universidad Nacional de Rosario \\ Licenciatura en Ciencias de la Computación \\ Bases de Datos Avanzadas}
+\end{frame}
+
+\section{Resumen}
+\include{resumen}
+
+\section{Estado Del Arte}
+
+\estindc{1}{0}
+\subsection{The Future of the data storage in Particle Physics and
+Astronomy}
+\include{papers/multidb}
+
+\estindc{0}{1}
+\subsection{Fraud Detection in NoSQL Database Systems using Advanced Machine Learning}
+\include{papers/fraud}
+
+\section{Relaciones}
+\include{relaciones}
+
+\section{Conclusiones}
+\include{conclusiones}
+
+\section{Dudas}
+\begin{frame}
+    \vspace{1cm}
+    
+    \centering
+    Dudas?
+    
+\end{frame}
+
+\section{Referencias}
+\begin{frame}
+\frametitle{Referencias}
+    \begin{itemize}
+    	\item[1] Hřivnáč, J., Peloton, J.: Multidatabase the future of the data storage in particle physics and astronomy. EPJ Web of Conferences 295 (2024) \myref{https://doi.org/10.1051/epjconf/202429501039}{doi.org/10.1051/epjconf/202429501039}
+
+        \item[2] LSST Science Book, Version 2.0 (2009)
+
+        \item[3]  Fink Project,\myref{https://fink-broker.org/}{fink-broker.org}
+        
+        \item[4] Zwicky transient facility (ztf),\myref{https://www.ztf.caltech.edu/}{www.ztf.caltech.edu}
+        
+        \item[5] Janusgraph,\myref{https://janusgraph.org/}{janusgraph.org}
+
+        \item[6] Moller, A., Peloton, J., Ishida, E.E.O., Arnault, C., Bachelet, e.a.: fink, a new generation of broker for the LSST community. Monthly Notices of the Royal Astronomical Society 501(3), 3272–3288 (2020), \myref{https://doi.org/10.1093/mnras/staa3602}{doi.org/10.1093/mnras/staa3602}
+
+        \item[7] Arjunan, T.: Fraud Detection in NoSQL Database Systems using Advanced Machine Learning (2024) \myref{https://doi.org/10.38124/ijisrt/IJISRT24MAR127}{doi.org/10.38124/ijisrt/IJISRT24MAR127}
+    \end{itemize}
+\end{frame}
+
+\end{document}
