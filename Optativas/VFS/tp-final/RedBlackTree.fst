@@ -3,19 +3,19 @@ module RedBlackTree
 ////////////////////////////// Structure //////////////////////////////
 
 // Color type
-type color = 
-  | Red 
+type color =
+  | Red
   | Black
 
 // Red-black tree type. Ver si lo hacemos polimórfico con un tipo que tenga orden definido
-type rbt (a : Type) = 
+type rbt (a : eqtype) = 
   | E
   | N of color & rbt a & a & rbt a
 
 ////////////////////////////// Aux Functions //////////////////////////////
 
 // Balance function
-let _balance (#a : Type) (c : color) (t : rbt a) (x : a) (b : rbt a) : rbt a =
+let _balance (#a : eqtype) (c : color) (t : rbt a) (x : a) (b : rbt a) : rbt a =
   match c, t, x, b with
   | Black, N (Red, N (Red, a, x, b), y, c), z, d
   | Black, N (Red, a, x, N (Red, b, y, c)), z, d
@@ -25,7 +25,7 @@ let _balance (#a : Type) (c : color) (t : rbt a) (x : a) (b : rbt a) : rbt a =
   | c, a, x, b -> N (c, a, x, b)
 
 // Min function
-let rec _min (#a : Type) (t : rbt a) : option a =
+let rec _min (#a : eqtype) (t : rbt a) : option a =
   match t with
   | N (_, E, x, _) -> Some x
   | N (_, l, _, _) -> _min l
@@ -34,7 +34,7 @@ let rec _min (#a : Type) (t : rbt a) : option a =
 ////////////////////////////// Main Functions //////////////////////////////
 
 // Insert function
-let rec insert (#a : Type) (x : a) (t : rbt a) : rbt a = 
+let rec insert (#a : eqtype) (x : a) (t : rbt a) : rbt a = 
   match t with
   | E -> N (Red, E, x, E)
   | N (c, l, y, r) ->
@@ -43,7 +43,7 @@ let rec insert (#a : Type) (x : a) (t : rbt a) : rbt a =
     else t
 
 // Delete function
-let rec delete (#a : Type) (x : a) (t : rbt a) : Tot (rbt a) (decreases t) =
+let rec delete (#a : eqtype) (x : a) (t : rbt a) : Tot (rbt a) (decreases t) =
   match t with
   | E -> E
   | N (c, l, y, r) ->
@@ -58,7 +58,7 @@ let rec delete (#a : Type) (x : a) (t : rbt a) : Tot (rbt a) (decreases t) =
         | Some m -> _balance c l m (delete m r)
 
 // Member function
-let rec member (#a : Type) (x : a) (t : rbt a) : bool = 
+let rec member (#a : eqtype) (x : a) (t : rbt a) : bool = 
   match t with
   | E -> false
   | N (_, l, y, r) ->
@@ -67,7 +67,7 @@ let rec member (#a : Type) (x : a) (t : rbt a) : bool =
     else true
 
 // Size function
-let rec size (#a : Type) (t : rbt a) : a =
+let rec size (#a : eqtype) (t : rbt a) : a =
   match t with
   | E -> 0
   | N (_, l, _, r) -> 1 + size l + size r
