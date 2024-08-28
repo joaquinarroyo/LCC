@@ -27,7 +27,7 @@ instance listas_son_container0 (a:eqtype)
     mem = mem;
     ins = ins;
     del = del;
-  }
+}
 
 
 let models (#a:eqtype)
