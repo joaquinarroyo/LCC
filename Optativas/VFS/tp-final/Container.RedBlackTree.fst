@@ -41,29 +41,41 @@ let is_empty (t:rbt int) : bool =
   | E -> true
   | _ -> false
 
-(* Insert function *)
-let rec ins (x:int) (t:rbt int) : rbt int = 
+(* Make black function *)
+let make_black (t:rbt int) : rbt int =
   match t with
-  | E -> N (Black, E, x, E)
+  | E -> E
+  | N (_, l, x, r) -> N (Black, l, x, r)
+
+(* Insert function *)
+let rec ins' (x:int) (t:rbt int) : rbt int = 
+  match t with
+  | E -> N (Red, E, x, E)
   | N (c, l, y, r) ->
-    if x < y then balance (N (c, (ins x l), y, r))
-    else if x > y then balance (N (c, l, y, (ins x r)))
-    else t
+    if x < y then balance (N (c, (ins' x l), y, r))
+    else if x > y then balance (N (c, l, y, (ins' x r)))
+    else t // No se permiten elementos repetidos
+
+let ins (x:int) (t:rbt int) : rbt int =
+  make_black (ins' x t)
 
 (* Delete function *)
-let rec del (x:int) (t:rbt int) : Tot (rbt int) (decreases t) =
+let rec del' (x:int) (t:rbt int) : Tot (rbt int) (decreases t) =
   match t with
   | E -> E
   | N (c, l, y, r) ->
-    if x < y then balance (N (c, del x l, y, r)) 
-    else if x > y then balance (N (c, l, y, del x r))
+    if x < y then balance (N (c, del' x l, y, r)) 
+    else if x > y then balance (N (c, l, y, del' x r))
     else match l, r with 
       | E, _ -> r
       | _, E -> l
       | _, _ -> 
         match min r with
         | None -> l
-        | Some m -> balance (N (c, l, m, del m r))
+        | Some m -> balance (N (c, l, m, del' m r))
+
+let del (x:int) (t:rbt int) : rbt int =
+  make_black (del' x t)
 
 (* Member function *)
 let rec mem (x:int) (t:rbt int) : bool = 
