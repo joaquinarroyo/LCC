@@ -26,7 +26,7 @@ let balance (t:rbt int) : rbt int =
   | _ -> t 
 
 (* Min function *)
-let rec min (t:rbt int) : option int=
+let rec min (t:rbt int) : option int =
   match t with
   | N (_, E, x, _) -> Some x
   | N (_, l, _, _) -> min l
@@ -42,7 +42,7 @@ let is_empty (t:rbt int) : bool =
   | _ -> false
 
 (* Insert function *)
-let rec ins (x:int) (t:rbt int) : rbt int= 
+let rec ins (x:int) (t:rbt int) : rbt int = 
   match t with
   | E -> N (Black, E, x, E)
   | N (c, l, y, r) ->
@@ -112,7 +112,7 @@ let mem_ok (x:int) (t:rbt int) (ss:TSet.set int)
 
 let rec is_bst (t: rbt int) (min_val: option int) (max_val: option int) : bool =
   match t with
-  | E -> true 
+  | E -> true
   | N (_, l, x, r) ->
     let within_limits = 
       (match min_val with
