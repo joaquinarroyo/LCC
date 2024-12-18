@@ -1,8 +1,0 @@
-let suma : Nat -> (Nat -> Nat) =
-    fun (x:Nat) -> let f:Nat->Nat = fun (y:Nat) -> x + y in f
-
-let suma5 : Nat -> Nat = suma 5
-
-let quince : Nat = suma5 10
- 
-let _ : Nat = print "suma 5 10 = " quince

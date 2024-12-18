@@ -1,3 +1,0 @@
-let _ : Nat =
-  (print "uno" 1 + print "dos" 2) +
-  (print "tre" 3 + print "cua" 4)

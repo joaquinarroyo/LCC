@@ -1,3 +1,0 @@
-let test : Nat =
-  (let x : Nat = print "asd" 123 in (fun (y:Nat) -> x+y))
-  (print "efg" 456)

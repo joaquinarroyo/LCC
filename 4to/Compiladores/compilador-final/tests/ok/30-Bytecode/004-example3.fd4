@@ -1,7 +1,0 @@
-let z : (Nat -> Nat) =
-    let y : Nat = 4 in let f : (Nat -> Nat) = fun (x : Nat) -> x + y in f
-
-let x : Nat = print "x=" 170000
-
-
-

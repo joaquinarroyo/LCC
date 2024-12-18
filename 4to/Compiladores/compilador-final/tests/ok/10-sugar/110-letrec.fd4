@@ -1,9 +1,0 @@
-let y : Nat = 1
-let rec ack (m n:Nat) : Nat =
-    ifz m
-    then n + y
-    else (ifz n
-          then ack (m-1) 1
-          else ack (m-1) (ack m (n-1)))
-
-let test : Nat = print "" (ack 2 2)

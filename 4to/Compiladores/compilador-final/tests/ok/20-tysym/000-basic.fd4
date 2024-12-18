@@ -1,3 +1,0 @@
-type Mynat = Nat
-
-let x : Mynat = print "" 20

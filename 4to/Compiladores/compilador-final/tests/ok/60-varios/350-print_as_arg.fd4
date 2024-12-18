@@ -1,3 +1,0 @@
-let f(g: Nat -> Nat) : Nat = g 10
-
-let res : Nat = f (print "res = ")

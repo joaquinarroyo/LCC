@@ -1,3 +1,0 @@
-let f (x : Nat) : Nat -> Nat = fun (y : Nat) -> x+y
-
-let test : Nat = print "" (f 10 20)
