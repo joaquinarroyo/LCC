@@ -1,12 +1,13 @@
 # Licenciatura en Ciencias de la Computación
 Contenido de materias de la carrera Licenciatura en Ciencias de la Computación (FCEIA)
-- 1er Año (2019) (No hay contenido) &#x2705;
-  - Análisis Matemático I 
-  - Algebra I
-  - Programación I
-  - Análisis Matemático II
-  - Algebra II
-  - Programación II
+
+- 1er Año __(No hay contenido)__
+  - Análisis Matemático I (2019) &#x2705;
+  - Algebra I (2019) &#x2705;
+  - Programación I (2019) &#x2705;
+  - Análisis Matemático II (2019) &#x2705;
+  - Algebra II (2019) &#x2705;
+  - Programación II (2019) &#x2705;
 - 2do Año
   - Algebra Lineal (2020) &#x2705;
   - Estructuras de Datos y Algoritmos I (2020) &#x2705;
@@ -15,13 +16,13 @@ Contenido de materias de la carrera Licenciatura en Ciencias de la Computación 
   - Lógica (2020) &#x2705;
   - Complementos de Matemática I (2020) &#x2705;
   - Arquitectura del computador (2020) &#x2705;
-- 3er Año &#x2705;
-  - Probabilidad y Estadistica (2021)
-  - Sistemas Operativos I (2021)
-  - Estructuras de Datos y Algoritmos II (2022)
-  - Comunicaciones (2021)
-  - Analisis de lenguajes de programación (2022)
-  - Teoría de Bases de Datos (2022)
+- 3er Año
+  - Probabilidad y Estadistica (2021) &#x2705;
+  - Sistemas Operativos I (2021) &#x2705;
+  - Estructuras de Datos y Algoritmos II (2022) &#x2705;
+  - Comunicaciones (2021) &#x2705;
+  - Analisis de lenguajes de programación (2022) &#x2705;
+  - Teoría de Bases de Datos (2022) &#x2705;
 - 4to Año
   - Sistemas Operativos II (2022) 
   - Introducción a la Inteligencia Artificial (2023) &#x2705;
@@ -37,3 +38,4 @@ Contenido de materias de la carrera Licenciatura en Ciencias de la Computación 
   - Verificación con F* (2024)
   - Bases de Datos Avanzadas (2024) &#x2705;
   - Simulación de Sistemas Dinámicos (2024) &#x2705;
+- Miscelanea
