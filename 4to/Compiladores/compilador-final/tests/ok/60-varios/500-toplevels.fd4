@@ -1,0 +1,8 @@
+# Esto puede revelar un problema de shadowing, particularmente
+# en la compilación a bytecode (e.g. si se cierran de a una
+# las decls, puede quedar x=y=Bound 0 en z)
+
+let x : Nat = print "x = " 1
+let y : Nat = print "y = " (x + x)
+let z : Nat = print "z = " (x + y)
+let w : Nat = (fun (x:Nat) -> 1+x) z

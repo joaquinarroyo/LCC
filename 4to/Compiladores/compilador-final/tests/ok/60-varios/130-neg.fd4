@@ -1,0 +1,4 @@
+let test : Nat =
+  let x : Nat = 10 in
+  let y : Nat = 20 in
+  print "" (x-y)

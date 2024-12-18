@@ -1,0 +1,4 @@
+let test (x:Nat) : Nat =
+  1 + (fun (y z : Nat) -> y-z) 3 2
+
+let res : Nat = print (test 100)

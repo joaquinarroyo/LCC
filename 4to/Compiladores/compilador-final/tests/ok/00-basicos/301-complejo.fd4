@@ -1,0 +1,6 @@
+let f (x y:Nat):Nat = x+y
+let h (x y z:Nat):Nat = ifz x then y else z
+let rec prod (x:Nat)(y:Nat):Nat = ifz x then 0 else y + (prod (x-1) y)
+let g (x:Nat->Nat)(y:Nat):Nat = x y
+let id (x:Nat):Nat = x
+let res:Nat = let j:Nat = ((f 1) 2) in print "j = " j

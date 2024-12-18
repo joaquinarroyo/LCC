@@ -1,0 +1,95 @@
+# listas con numeros del 1 al 9 (base-10)
+# Al ser una representación de solo dígitos es fácil ver la 
+# lista resultante en el numero final.
+
+let base:Nat = 10
+
+let pred (x : Nat) : Nat = x - 1
+
+let op(x:Nat) : Nat = 
+    ifz x then 1 else 0
+
+let eq(x y : Nat) : Nat = 
+    ifz (x-y) + (y-x) then 0 else 1 
+
+let leq(x y : Nat) : Nat = x - y
+
+let rec div(x y:Nat) : Nat = 
+    ifz eq x y then 1 else ifz (x - y) then 0 else 1 + (div (x-y) y)
+
+let rec mod(x y:Nat) : Nat = 
+    ifz eq x y then 0 else ifz (x - y) then x else mod (x-y) y
+
+let rec mult(x y : Nat):Nat =
+    ifz y then 0 else x + (mult x (pred y))
+
+let head(xs : Nat):Nat = 
+    mod xs base
+
+let tail(xs : Nat):Nat =
+    div xs base
+
+let add(n xs:Nat):Nat =
+    (mult xs base) + n
+
+let l:Nat = add 1 (add 2 (add 3 0))
+
+let h:Nat = head (tail l)
+
+let rec len(xs:Nat):Nat = 
+    ifz xs then 0 else 1 + (len (tail xs))
+
+let rec sum(xs : Nat):Nat =
+    ifz xs then 0 else (head xs) + (sum (tail xs))
+
+let rec map(f:Nat->Nat)(xs:Nat):Nat = 
+    ifz xs then 0 else add (f (head xs)) (map f (tail xs))
+
+let sm:Nat = sum (map (mult 4) l)
+
+let rec foldr(xs b:Nat)(f:Nat->Nat->Nat) : Nat =
+    ifz xs then b else f (head xs) (foldr (tail xs) b f)
+
+let f:Nat = foldr l 1 mult 
+
+
+let rec splitOddAux(xs p:Nat) : Nat = 
+    ifz xs then 0 else ifz p then add (head xs) (splitOddAux (tail xs) (op p)) else splitOddAux (tail xs) (op p)
+
+let splitOdd(xs:Nat):Nat = splitOddAux xs 0
+let splitEven(xs:Nat):Nat = splitOddAux xs 1
+
+#let o:Nat = sum (splitOdd l)
+#let e:Nat = sum (splitEven l)
+
+let rec join(ys xs:Nat) : Nat =
+    ifz ys then xs else ifz xs then ys else
+    ifz leq (head xs)(head ys) then add (head xs) (join ys (tail xs))
+    else add (head ys) (join (tail ys) xs)
+
+let rec mergeSort(xs:Nat):Nat = 
+    ifz xs then 0 else
+        ifz eq (len xs) 1 then xs else
+            join (mergeSort (splitOdd xs)) (mergeSort (splitEven xs))
+
+let l2:Nat = add 5 (add 4 (add 3 0))
+
+#let sl2:Nat = mergeSort l2
+
+let xs1:Nat = (add 5 (add 4 (add 3 (add 2 (add 1 0)))))
+let xs2:Nat =  (add 3 (add 5 (add 2 (add 7 (add 9 0)))))
+let xs22:Nat = (add 23 (add 12 (add 4 (add 2 0))))
+let xs3:Nat = (add 3 (add 2 (add 1 0)))
+let xs4:Nat =  (add 2 (add 1 0))
+
+let rec append(xs ys:Nat) : Nat =
+    ifz xs then ys else add (head xs) (append (tail xs) ys)
+
+let rec reverseAux(xs ys:Nat) :Nat =
+    ifz xs then ys else reverseAux (tail xs) (add (head xs) ys)
+ let reverse(xs:Nat):Nat = 
+    reverseAux xs 0
+
+#let res : Nat = reverse l
+
+let sorted:Nat = print (mergeSort xs2)

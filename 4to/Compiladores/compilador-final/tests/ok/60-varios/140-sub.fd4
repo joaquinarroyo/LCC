@@ -1,0 +1,5 @@
+let f (x:Nat) : Nat =
+   let sub1 (y:Nat) : Nat = y-1 in
+   sub1 (x-3)
+
+let res : Nat = print (f 20)

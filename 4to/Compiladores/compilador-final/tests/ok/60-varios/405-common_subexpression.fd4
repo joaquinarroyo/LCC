@@ -1,0 +1,9 @@
+# Se puede obtener una expresión común mediante optimizaciones
+let f(x:Nat):Nat = (2+x) + (2+x) + 1
+
+let res1: Nat = print "res1=" (f 0)
+
+# Acá no podemos obtener una expresión común porque rompemos efectos laterales
+let g(x:Nat):Nat = print "g_uno" (2+x) + print "g_dos" (2+x) + 1
+
+let res2:Nat = print "res2=" (g 0) 

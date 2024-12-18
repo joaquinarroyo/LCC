@@ -1,0 +1,13 @@
+let rec sumaL (x:Nat) (y:Nat) : Nat =
+  ifz y then x else 1 + sumaL x (y-1)
+
+let rec sumaL' (x:Nat) (y:Nat) : Nat =
+  ifz y then x else 1 + sumaL x (y-1)
+
+let rec sumaL'' (x:Nat) (y:Nat) : Nat =
+  ifz y then x else 1 + sumaL'' 0 (y-1)
+
+let rec sumaR (x:Nat) (y:Nat) : Nat =
+  ifz x then y else 1 + sumaR (x-1) y
+
+let test : Nat = print (sumaL 0 10000)

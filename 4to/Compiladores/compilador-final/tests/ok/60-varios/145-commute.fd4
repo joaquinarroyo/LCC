@@ -1,0 +1,8 @@
+let test (x:Nat) : Nat =
+  let y : Nat = (
+    let z:Nat = x+1 in
+    z+z )
+  in
+  y+y
+
+let _ : Nat = print (test 100)

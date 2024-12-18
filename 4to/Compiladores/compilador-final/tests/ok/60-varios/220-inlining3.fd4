@@ -1,0 +1,18 @@
+let x_por_1024 (x:Nat) : Nat =
+  let x : Nat = x + x in
+  let x : Nat = x + x in
+  let x : Nat = x + x in
+  let x : Nat = x + x in
+  let x : Nat = x + x in
+  let x : Nat = x + x in
+  let x : Nat = x + x in
+  let x : Nat = x + x in
+  let x : Nat = x + x in
+  let x : Nat = x + x in
+  x
+
+let mas_x_por_1024 (x:Nat) : Nat -> Nat =
+  let xx : Nat = x_por_1024  x in
+  fun (y:Nat) -> y + xx
+
+let res : Nat = print (mas_x_por_1024 1 1024)

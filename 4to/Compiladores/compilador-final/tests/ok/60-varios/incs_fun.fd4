@@ -1,0 +1,21 @@
+# FIXME: esto podría optimizarse mucho más? incluso a \x -> x+10?
+# Ahora mismo eso no pasa porque
+# 1) inc es un lambda y no se propaga al aparecer muchas veces,
+# 2) no hay optimizaciones algebraicas, aunque eso es relativamente
+# fácil.
+
+let inc10 (x:Nat) : Nat =
+  let inc (x:Nat) : Nat = x+1 in
+  let x:Nat = inc x in
+  let x:Nat = inc x in
+  let x:Nat = inc x in
+  let x:Nat = inc x in
+  let x:Nat = inc x in
+  let x:Nat = inc x in
+  let x:Nat = inc x in
+  let x:Nat = inc x in
+  let x:Nat = inc x in
+  let x:Nat = inc x in
+  x
+
+let _ : Nat = print "res = " (inc10 100)

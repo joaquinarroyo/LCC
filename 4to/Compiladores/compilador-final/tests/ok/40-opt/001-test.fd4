@@ -1,0 +1,5 @@
+let x : Nat = 2 + 3
+let y : Nat = x + 5
+let suma1 (x : Nat) : Nat = x + 1
+let f (g : Nat -> Nat) : Nat = g 1
+let ret : Nat = print "ret=" (f suma1)

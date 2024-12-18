@@ -1,0 +1,3 @@
+let f:Nat->Nat = fun (x:Nat) -> x+1
+
+let res:Nat = print "res = " (f 100)

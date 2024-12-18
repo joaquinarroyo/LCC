@@ -1,0 +1,15 @@
+let test (x:Nat) : Nat =
+    let k1 : Nat = 1 in
+    let b : Nat = 2 in
+    let c : Nat = 3 in
+    let d : Nat = 4 in
+    let e : Nat = 5 in
+    let f : Nat = 6 in
+    let g : Nat = 7 in
+    let h : Nat = 8 in
+    let i : Nat = 9 in
+    let j : Nat = 10 in
+    let k : Nat = 11 in
+    k + k1
+
+let xxx : Nat = print (test 0)
