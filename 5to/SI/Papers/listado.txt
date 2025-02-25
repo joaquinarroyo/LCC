@@ -1,0 +1,26 @@
+Tienen que elegir 2 papers, de 2 grupos diferentes. Tienen que leerlos y prepararse para poder explicarlos en 10 minutos. Cuando se inscriben al final, nos avisan a Maxi y a mí qué papers eligieron. Alternativamente, pueden proponernos algún paper que no esté en esta lista, y esperar nuestra confirmación de que está OK. En el final se presenta 1 sólo de los 2 papers preparados (a elección de la Cátedra), y luego hay una sesión de preguntas (sobre el paper, sobre los TPs, y/o sobre el resto de la materia).
+
+La lista de papers:
+
+Grupo 1:
+1- Mauro Jaskelioff, Alejandro Russo. "Secure Multi-Execution in Haskell". PSI 2011, LNCS, Springer.
+2- Stephen Chong, Andrew C. Myers. "Decentralized Robustness".
+3- Gilles Barthe, Tamara Rezk, Amitabh Basu. "Security types preserving compilation". Journal of Computer Languages, Systems and Structures, 2005.
+4- Arnar Birgisson, Alejandro Russo, Andrei Sabelfeld. "Capabilities for information flow". PLAS 2011.
+5- Cormac Herley. "Unfalsifiability of security claims". PNAS June 7, 2016 113 (23) 6415-6420.
+6- Alejandro Russo. "Functional pearl: two can keep a secret, if one of them uses Haskell". ICFP 2015 Proceedings of the 20th ACM SIGPLAN International Conference on Functional Programming. Pages 280-288.
+
+Grupo 2:
+7- Stephen Checkoway, Lucas Davi, Alexandra Dmitrienko, Ahmad-Reza Sadeghi, Hovav Shacham, Marcel Winandy. "Return-Oriented Programming without Returns". CCS 2010, ACM Press.
+8- Karthik Bhargavan, Cedric Fournet, Nataliya Guts. "Pre- and Post-conditions for Security Typechecking".
+
+Grupo 3:
+9- Gavin Wood. "Ethereum: A Secure Decentralised Generalised Transaction Ledger".
+10- Gilles Barthe, Benjamin Gregoire, Sylvain Heraud, Santiago Zanella Beguelin. "Formal certification of ElGamal encryption: A gentle introduction to CertiCrypt". FAST 2008.
+11- Michael G. Reed, Paul F. Syverson, David M. Goldschlag. "Anonymous Connections and Onion Routing".
+
+Grupo 4:
+12- Han Gao, Chiara Bodei, Pierpaolo Degano, Hanne Riis Nielson. "A Formal Analysis for Capturing Replay Attacks in Cryptographic Protocols”.
+13- David Adrian, Karthikeyan Bhargavan, Zakir Durumeric, Pierrick Gaudry, Matthew Green, J. Alex Halderman, Nadia Heninger, Drew Springall, Emmanuel Thomé, Luke Valenta, Benjamin VanderSloot, Eric Wustrow, Santiago Zanella-Béguelin, Paul Zimmermann. "Imperfect Forward Secrecy: How Diffie-Hellman Fails in Practice". CCS 2015.
+14- Sergio Demian Lerner. “RSK: Bitcoin Merge Mining is Here to Stay”.
+15- Danny Dolev, Andrew Yao, "On the security of public key protocols", IEEE TIT 29(2), 1983.
