@@ -1,0 +1,10 @@
+*.o
+
+graphics/burned_probabilities_data
+graphics/fire_animation_data
+
+graphics/*.png
+graphics/*.mp4
+
+data/
+data.zip

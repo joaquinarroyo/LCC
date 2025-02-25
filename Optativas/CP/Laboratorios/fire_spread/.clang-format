@@ -1,0 +1,12 @@
+BasedOnStyle: LLVM
+
+IndentWidth: 2
+ColumnLimit: 96
+PointerAlignment: Left
+ReflowComments: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortBlocksOnASingleLine: Empty
+AlignAfterOpenBracket: BlockIndent
+Cpp11BracedListStyle: false
+
+# https://clang.llvm.org/docs/ClangFormatStyleOptions.html
