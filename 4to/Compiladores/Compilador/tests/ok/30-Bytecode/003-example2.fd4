@@ -1,0 +1,3 @@
+let f(x:Nat):Nat = x + 1
+let x:Nat = f 1
+let ret:Nat = print "f 1 =" x

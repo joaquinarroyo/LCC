@@ -1,0 +1,10 @@
+# En bytecode: sería bueno que func haga la suma, luego print, y luego
+# ret. No hace falta ningun shift/drop/pop intermedio. De todas formas
+# que este test pase no significa nada al respecto.
+
+let test (x:Nat) : Nat =
+  let res : Nat = x+x+x+x in
+  let _ : Nat = print "res = " res in
+  res
+
+let x : Nat = test 999

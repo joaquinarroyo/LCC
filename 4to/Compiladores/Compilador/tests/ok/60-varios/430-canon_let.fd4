@@ -1,0 +1,10 @@
+let f (x:Nat) : Nat = x
+
+let test (x y : Nat) : Nat =
+  (let z : Nat = f x in z + 1) +
+  (let z : Nat = f y in z + 1)
+
+# Si se quiere meter la suma dentro del let x, se tiene que bindear
+# primero el resultado de la izquierda para no reordenar efectos.
+let peligro : Nat =
+  (print "uno" 1) + (let x : Nat = print "dos" 2 in x + print "tres" 3)

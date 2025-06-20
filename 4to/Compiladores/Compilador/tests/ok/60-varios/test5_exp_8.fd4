@@ -1,0 +1,9 @@
+# Archivo con funciones varias (algunas de las primeras prácticas) para ir probando
+
+let pred (x : Nat) : Nat = x - 1
+
+let rec mult(x y : Nat):Nat = ifz y then 0 else x + (mult x (pred y))
+
+let rec exp(x y : Nat):Nat = ifz y then 1 else mult x (exp x (pred y))
+
+let res:Nat = print (exp 2 3)

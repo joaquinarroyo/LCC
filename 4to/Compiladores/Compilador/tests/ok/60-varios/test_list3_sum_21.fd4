@@ -1,0 +1,40 @@
+# listas con numeros del 1 al 9 (base-10)
+# Al ser una representación de solo dígitos es fácil ver la 
+# lista resultante en el numero final.
+
+let base:Nat = 10
+
+let pred (x : Nat) : Nat = x - 1
+
+let op(x:Nat) : Nat = 
+    ifz x then 1 else 0
+
+let eq(x y : Nat) : Nat = 
+    ifz (x-y) + (y-x) then 0 else 1 
+
+let leq(x y : Nat) : Nat = x - y
+
+let rec div(x y:Nat) : Nat = 
+    ifz eq x y then 1 else ifz (x - y) then 0 else 1 + (div (x-y) y)
+
+let rec mod(x y:Nat) : Nat = 
+    ifz eq x y then 0 else ifz (x - y) then x else mod (x-y) y
+
+let rec mult(x y : Nat):Nat =
+    ifz y then 0 else x + (mult x (pred y))
+
+let head(xs : Nat):Nat = 
+    mod xs base
+
+let tail(xs : Nat):Nat =
+    div xs base
+
+let add(n xs:Nat):Nat =
+    (mult xs base) + n
+
+let rec sum(xs : Nat):Nat =
+    ifz xs then 0 else (head xs) + (sum (tail xs))
+
+let l:Nat = add 6 (add 7 (add 8 0))
+
+let res : Nat = print (sum l)

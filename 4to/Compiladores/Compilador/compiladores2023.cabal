@@ -1,0 +1,77 @@
+cabal-version:      2.4
+name:               compiladores2023
+version:            0.1.0.2023
+
+-- A short (one-line) description of the package.
+synopsis:           Código fuente para la materia Compiladores (FCEIA/UNR)
+
+-- A longer description of the package.
+-- description:
+
+homepage:       https://github.com/ compiladores-lcc/compiladores#readme
+bug-reports:    https://github.com/ compiladores-lcc/compiladores/issues
+
+author:         Mauro Jaskelioff y Guido Martinez
+maintainer:     mauro@fceia.unr.edu.ar
+copyright:      2023 Mauro Jaskelioff y Guido Martinez
+license-file:   LICENSE
+
+-- category:
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+executable compiladores2023
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+    other-modules:
+        Common
+        Elab
+        Errors
+        Eval
+        Global
+        Lang
+        MonadFD4
+        PPrint
+        Parse
+        Subst
+        TypeChecker
+        Helper
+        CEK
+        Bytecompile
+        Profile
+        Bytecompile8
+        Optimizer
+        C
+        IR
+        ClosureConvert
+
+    ghc-options: 
+        -threaded 
+        -rtsopts 
+        -with-rtsopts=-N 
+        -fwarn-tabs 
+        -fwarn-unused-imports 
+        -fwarn-missing-signatures 
+        -fwarn-name-shadowing 
+        -fwarn-incomplete-patterns
+    -- other-extensions:
+    build-depends:    
+          base >=4.7
+        , binary
+        , bytestring
+        , exceptions
+        , extra
+        , filepath
+        , haskeline
+        , mtl
+        , optparse-applicative
+        , parsec
+        , pretty
+        , prettyprinter
+        , prettyprinter-ansi-terminal
+        , text
+        , split
+    hs-source-dirs:   src
+    default-language: Haskell2010

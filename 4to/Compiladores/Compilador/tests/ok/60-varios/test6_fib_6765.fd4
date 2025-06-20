@@ -1,0 +1,5 @@
+let pred (x : Nat) : Nat = x - 1
+
+let rec fib(x:Nat):Nat = ifz x then 0 else (ifz pred x then 1 else  (fib (pred x)) + (fib (pred (pred x))))  
+
+let res:Nat = print (fib 20)

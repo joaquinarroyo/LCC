@@ -1,0 +1,7 @@
+let test (x:Nat) : Nat =
+  let rec f (y : Nat) : Nat =
+    ifz y then x else (1 + f (y-1))
+  in
+  f x
+
+let r : Nat = print (test 100)

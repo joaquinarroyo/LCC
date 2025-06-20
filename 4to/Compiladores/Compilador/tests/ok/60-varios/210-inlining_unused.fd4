@@ -1,0 +1,5 @@
+let f (x:Nat) : Nat =
+  let y : Nat = x + 42 in
+  x+12
+
+let res : Nat = print (f 10)

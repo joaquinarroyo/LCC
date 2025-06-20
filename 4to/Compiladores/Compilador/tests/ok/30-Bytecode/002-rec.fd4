@@ -1,0 +1,2 @@
+let x:Nat = let z:Nat = 2 in 3
+let j:Nat = print "x= " x 

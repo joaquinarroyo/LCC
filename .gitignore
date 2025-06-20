@@ -1,0 +1,8 @@
+*.hi
+*.o
+dist-newstyle/*
+*.bc
+*.bc8
+*.c
+*.bin%
+*.fd4.out
