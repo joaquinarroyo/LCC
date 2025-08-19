@@ -1,0 +1,8 @@
+#ifndef NACHOS_THREADS_THREADTESTGARDEN__SEM__HH
+#define NACHOS_THREADS_THREADTESTGARDEN__SEM__HH
+
+
+void ThreadTestGardenSem();
+
+
+#endif
