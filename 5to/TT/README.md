@@ -1,2 +1,4 @@
-# Taller de Tesina _2024_
+# Taller de Tesina _2025_
 Contenido:
+- Apuntes teóricos
+- Resumen para coloqui
