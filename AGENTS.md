@@ -25,7 +25,9 @@ convenciones que ya haya ahí, que son las de la cátedra y no las mías.
 
 ## Convenciones
 
-- Commits en Conventional Commits, en español.
+- Conventional Commits, en español.
+- Si tocás código, los comentarios nuevos van en inglés, como en el resto del
+  workspace. Lo ya entregado se deja como está: es registro de la cursada.
 - **Nunca agregar trailers de agente** — `Co-Authored-By: Claude`, `Generated
   with …`, links de sesión, o el equivalente de cualquier otro agente. El
   mensaje explica el cambio; quién lo tipeó no es parte del registro.
