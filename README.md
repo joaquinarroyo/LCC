@@ -1,5 +1,5 @@
 # Licenciatura en Ciencias de la Computación
-Contenido de materias de la carrera Licenciatura en Ciencias de la Computación (FCEIA)
+Contenido de materias de la carrera [Licenciatura en Ciencias de la Computación](https://dcc.fceia.unr.edu.ar) (FCEIA, UNR)
 
 - 1er Año __(No hay contenido)__
 - 2do Año

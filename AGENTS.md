@@ -5,8 +5,9 @@ copia que mantener en sync.
 
 ## Qué es
 
-Trabajos prácticos, prácticas y apuntes de la Licenciatura en Ciencias de la
-Computación (FCEIA, UNR), de 1ro a 5to más optativas.
+Trabajos prácticos, prácticas y apuntes de la [Licenciatura en Ciencias de la
+Computación](https://dcc.fceia.unr.edu.ar) (FCEIA, UNR), de 1ro a 5to más
+optativas.
 
 **Es un archivo, no un proyecto.** No hay build, ni tests, ni CI, ni
 dependencias comunes: cada carpeta es una materia y cada materia trae el
